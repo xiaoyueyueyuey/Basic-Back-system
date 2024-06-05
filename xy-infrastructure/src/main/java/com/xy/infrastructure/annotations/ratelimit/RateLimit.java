@@ -46,8 +46,6 @@ public @interface RateLimit {
      */
     CacheType cacheType() default CacheType.REDIS;
 
-
-
     enum LimitType {
         /**
          * 默认策略全局限流  不区分IP和用户

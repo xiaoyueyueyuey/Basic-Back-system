@@ -46,7 +46,6 @@ public class SysConfigServiceImpl extends ServiceImpl<SysConfigMapper, SysConfig
         Page<SysConfigEntity> page = this.page(query.toPage(), query.toQueryWrapper());
         List<ConfigDTO> records = page.getRecords().stream().map(ConfigDTO::new).collect(Collectors.toList());
         return new PageDTO<>(records, page.getTotal());
-
     }
 
     @Override

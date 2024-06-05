@@ -1,9 +1,6 @@
 package com.xy.admin.customize.aop.accessLog;
-
-
 import com.xy.common.enums.common.BusinessTypeEnum;
 import com.xy.common.enums.common.OperatorTypeEnum;
-
 import java.lang.annotation.*;
 
 /**

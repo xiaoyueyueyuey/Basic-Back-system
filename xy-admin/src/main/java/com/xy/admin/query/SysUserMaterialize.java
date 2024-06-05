@@ -7,14 +7,15 @@ import com.xy.domain.DomainEvent;
 import com.xy.domain.DomainEventListener;
 import com.xy.domain.system.user.event.manager.*;
 import com.xy.infrastructure.user.AuthenticationUtils;
-import jakarta.annotation.Resource;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
+@RequiredArgsConstructor
 
 @Component
 public class SysUserMaterialize implements DomainEventListener {
-    @Resource
-    private SysUserMapper mapper;
+    private final SysUserMapper mapper;
+
 
     @Override
     public void onEvent(DomainEvent event) {
@@ -28,7 +29,16 @@ public class SysUserMaterialize implements DomainEventListener {
             changeStatus((StatusChangeEvent) event);
         } else if (event instanceof PasswordResetEvent) {
             resetPassword((PasswordResetEvent) event);
+        } else if (event instanceof UserLoginIpAndTimeUpdateEvent) {
+            updateUserLoginIpAndTime((UserLoginIpAndTimeUpdateEvent) event);
+
         }
+    }
+
+    private void updateUserLoginIpAndTime(UserLoginIpAndTimeUpdateEvent event) {
+        SysUserEntity sysUserEntity = new SysUserEntity();
+        BeanUtils.copyProperties(event, sysUserEntity);
+        mapper.updateById(sysUserEntity);
     }
 
     public void addSysUser(UserAddEvent event) {

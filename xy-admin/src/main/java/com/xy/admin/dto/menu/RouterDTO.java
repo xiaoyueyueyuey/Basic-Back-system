@@ -1,10 +1,9 @@
 package com.xy.admin.dto.menu;
-
-import com.agileboot.common.utils.jackson.JacksonUtil;
-import com.agileboot.domain.system.menu.db.SysMenuEntity;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.google.common.collect.Lists;
+import com.xy.admin.entity.SysMenuEntity;
+import com.xy.common.utils.jackson.JacksonUtil;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

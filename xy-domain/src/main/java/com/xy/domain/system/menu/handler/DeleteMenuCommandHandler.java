@@ -8,6 +8,8 @@ import com.xy.domain.system.menu.MenuRepository;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Component;
 
+import java.util.Collections;
+
 @Component
 public class DeleteMenuCommandHandler implements CommandHandler<DeleteMenuCommand> {
 
@@ -24,7 +26,7 @@ public class DeleteMenuCommandHandler implements CommandHandler<DeleteMenuComman
 
         Boolean handle = menuModel.handle(eventQueue, command);
         if(handle){
-            menuRepository.deleteById(command.getMenuId());
+            menuRepository.deleteBatchByIds(Collections.singletonList(command.getMenuId()));
         }
         return handle;
     }

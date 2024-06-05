@@ -5,15 +5,17 @@ import com.xy.admin.entity.agg.SysMenuAggEntity;
 import com.xy.admin.mapper.agg.SysMenuAggMapper;
 import com.xy.domain.system.menu.MenuModel;
 import com.xy.domain.system.menu.MenuRepository;
-import jakarta.annotation.Resource;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
+@RequiredArgsConstructor
 
 @Component
 public class MenuRepositoryImpl implements MenuRepository {
 
-    @Resource
-    private SysMenuAggMapper sysMenuAggMapper;
+    private final SysMenuAggMapper sysMenuAggMapper;
 
     /**
      * 根据id查询菜单聚合
@@ -62,7 +64,7 @@ public class MenuRepositoryImpl implements MenuRepository {
     }
 
     @Override
-    public Boolean deleteById(Long id) {
-        return sysMenuAggMapper.deleteById(id) > 0;
+    public Boolean deleteBatchByIds(List<Long> ids) {
+        return sysMenuAggMapper.deleteBatchIds(ids) > 0;
     }
 }

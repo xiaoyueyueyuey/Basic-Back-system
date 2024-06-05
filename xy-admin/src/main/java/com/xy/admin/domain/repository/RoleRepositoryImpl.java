@@ -5,14 +5,16 @@ import com.xy.admin.entity.agg.SysRoleAggEntity;
 import com.xy.admin.mapper.agg.SysRoleAggMapper;
 import com.xy.domain.system.role.RoleModel;
 import com.xy.domain.system.role.RoleRepository;
-import jakarta.annotation.Resource;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+@RequiredArgsConstructor
+
 @Component
 public class RoleRepositoryImpl implements RoleRepository {
-    @Resource
-    SysRoleAggMapper sysRoleAggMapper;
+    final SysRoleAggMapper sysRoleAggMapper;
 
     @Override
     public RoleModel findByIdOrError(Long id) {
@@ -36,8 +38,8 @@ public class RoleRepositoryImpl implements RoleRepository {
     }
 
     @Override
-    public Boolean deleteById(Long id) {
-        return sysRoleAggMapper.deleteById(id) > 0;
+    public Boolean deleteBatchByIds(List<Long> ids) {
+        return sysRoleAggMapper.deleteBatchIds(ids) > 0;
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.xy.admin.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.xy.admin.entity.SysOperationLogEntity;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -11,6 +12,8 @@ import com.xy.admin.entity.SysOperationLogEntity;
  * @author valarchie
  * @since 2022-06-08
  */
+@Mapper
+
 public interface SysOperationLogMapper extends BaseMapper<SysOperationLogEntity> {
 
 }

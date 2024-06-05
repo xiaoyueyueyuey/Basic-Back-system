@@ -1,10 +1,13 @@
 package com.xy.admin.query.service.impl;
 
 
+import cn.hutool.extra.spring.SpringUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.xy.admin.common.cache.CacheCenter;
+import com.xy.admin.common.dto.common.CurrentLoginUserDTO;
 import com.xy.admin.dto.post.PostDTO;
 import com.xy.admin.dto.role.RoleDTO;
 import com.xy.admin.dto.user.SearchUserDO;
@@ -19,7 +22,8 @@ import com.xy.admin.query.service.SysPostService;
 import com.xy.admin.query.service.SysRoleService;
 import com.xy.admin.query.service.SysUserService;
 import com.xy.infrastructure.page.AbstractPageQuery;
-import jakarta.annotation.Resource;
+import com.xy.infrastructure.user.web.SystemLoginUser;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,13 +38,10 @@ import java.util.stream.Collectors;
  * @since 2022-06-16
  */
 @Service
+@RequiredArgsConstructor
 public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUserEntity> implements SysUserService {
-
-
-    @Resource
-    private SysRoleService roleService;
-    @Resource
-    private SysPostService postService;
+//    private final SysRoleService roleService;
+    private final SysPostService postService;
 
     @Override
     public SysRoleEntity getRoleOfUser(Long userId) {
@@ -78,6 +79,10 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUserEntity
         UserDetailDTO detailDTO = new UserDetailDTO();
         LambdaQueryWrapper<SysRoleEntity> roleQuery = new LambdaQueryWrapper<SysRoleEntity>()
                 .orderByAsc(SysRoleEntity::getRoleSort);
+
+        //因爲角色IMPL也以來於用戶IMPL，所以這裏使用SpringUtil.getBean()方法獲取bean解決循環依賴問題
+        SysRoleService roleService = SpringUtil.getBean(SysRoleService.class);
+
         List<RoleDTO> roleDtoList = roleService.list(roleQuery).stream().map(RoleDTO::new).collect(Collectors.toList());
         List<PostDTO> postDtoList = postService.list().stream().map(PostDTO::new).collect(Collectors.toList());
         detailDTO.setRoleOptions(roleDtoList);
@@ -96,5 +101,20 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUserEntity
         SysRoleEntity roleEntity = this.getRoleOfUser(userId);
         return new UserProfileDTO(userEntity, postEntity, roleEntity);
     }
+
+    @Override
+    /**
+     * 获取当前登录用户信息
+     *
+     * @return 当前登录用户信息
+     */
+    public CurrentLoginUserDTO getLoginUserInfo(SystemLoginUser loginUser) {
+        CurrentLoginUserDTO permissionDTO = new CurrentLoginUserDTO();
+        permissionDTO.setUserInfo(new UserDTO(CacheCenter.userCache.getObjectById(loginUser.getUserId())));
+        permissionDTO.setRoleKey(loginUser.getRoleInfo().getRoleKey());
+        permissionDTO.setPermissions(loginUser.getRoleInfo().getMenuPermissions());
+        return permissionDTO;
+    }
+
 
 }

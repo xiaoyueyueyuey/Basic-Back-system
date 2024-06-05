@@ -1,7 +1,10 @@
 package com.xy.admin.query.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.xy.admin.dto.log.OperationLogDTO;
 import com.xy.admin.entity.SysOperationLogEntity;
+import com.xy.admin.query.OperationLogQuery;
+import com.xy.infrastructure.page.PageDTO;
 
 /**
  * <p>
@@ -13,4 +16,5 @@ import com.xy.admin.entity.SysOperationLogEntity;
  */
 public interface SysOperationLogService extends IService<SysOperationLogEntity> {
 
+    PageDTO<OperationLogDTO> getOperationLogList(OperationLogQuery query);
 }

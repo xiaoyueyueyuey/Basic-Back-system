@@ -62,7 +62,6 @@ public class DeptModel {
     }
     public Boolean handle(EventQueue eventQueue, DeleteDeptCommand command) {
         try {
-            checkDeptExist();//检查部门是否存在
             checkHasChildDept();//检查是否有子部门
             checkDeptAssignedToUsers();//检查部门是否分配给用户
         } catch (ApiException e) {

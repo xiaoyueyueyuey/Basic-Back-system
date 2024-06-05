@@ -26,7 +26,6 @@ import java.io.Serializable;
 @Schema( description = "SysRoleEntity对象角色信息表")
 public class SysRoleEntity extends BaseEntity<SysRoleEntity> implements Serializable {
 
-
     @Serial
     private static final long serialVersionUID = 5252758446971578830L;
     @Schema(description = "角色ID")

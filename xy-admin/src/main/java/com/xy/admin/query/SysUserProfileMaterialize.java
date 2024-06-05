@@ -8,14 +8,14 @@ import com.xy.domain.system.user.event.user.UserAvatarUpdateEvent;
 import com.xy.domain.system.user.event.user.UserPasswordUpdateEvent;
 import com.xy.domain.system.user.event.user.UserProfileUpdateEvent;
 import com.xy.infrastructure.user.AuthenticationUtils;
-import jakarta.annotation.Resource;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
+@RequiredArgsConstructor
 
 @Component
 public class SysUserProfileMaterialize implements DomainEventListener {
-    @Resource
-    private SysUserMapper sysUserMapper;
+    private final SysUserMapper sysUserMapper;
     @Override
     public void onEvent(DomainEvent event) {
         if(event instanceof UserProfileUpdateEvent){

@@ -22,9 +22,7 @@ import java.util.concurrent.TimeUnit;
 @Component
 @RequiredArgsConstructor
 public class RedisUtil {
-
     public final RedisTemplate redisTemplate;
-
     /**
      * 缓存基本的对象，Integer、String、实体类等
      *
@@ -34,7 +32,6 @@ public class RedisUtil {
     public <T> void setCacheObject(final String key, final T value) {
         redisTemplate.opsForValue().set(key, value);
     }
-
     /**
      * 缓存基本的对象，Integer、String、实体类等
      *
@@ -57,7 +54,6 @@ public class RedisUtil {
     public boolean expire(final String key, final long timeout) {
         return expire(key, timeout, TimeUnit.SECONDS);
     }
-
     /**
      * 设置有效时间
      *
@@ -84,8 +80,8 @@ public class RedisUtil {
     /**
      * 删除单个对象
      */
-    public void deleteObject(final String key) {
-        redisTemplate.delete(key);
+    public Boolean deleteObject(final String key) {
+       return redisTemplate.delete(key);
     }
 
     /**

@@ -2,6 +2,7 @@ package com.xy.admin.query.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.xy.admin.common.dto.common.CurrentLoginUserDTO;
 import com.xy.admin.dto.user.SearchUserDO;
 import com.xy.admin.dto.user.UserDetailDTO;
 import com.xy.admin.dto.user.UserProfileDTO;
@@ -9,6 +10,7 @@ import com.xy.admin.entity.SysPostEntity;
 import com.xy.admin.entity.SysRoleEntity;
 import com.xy.admin.entity.SysUserEntity;
 import com.xy.infrastructure.page.AbstractPageQuery;
+import com.xy.infrastructure.user.web.SystemLoginUser;
 
 /**
  * <p>
@@ -66,4 +68,6 @@ public interface SysUserService extends IService<SysUserEntity> {
     UserDetailDTO getUserDetailInfo(Long userId);
 
     UserProfileDTO getUserProfile(Long userId);
+
+    CurrentLoginUserDTO getLoginUserInfo(SystemLoginUser loginUser);
 }

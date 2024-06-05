@@ -23,17 +23,17 @@ public class SearchUserQuery<T> extends AbstractPageQuery<T> {
     @Override
     public QueryWrapper<T> addQueryCondition() {
         QueryWrapper<T> queryWrapper = new QueryWrapper<>();
-
-        queryWrapper.like(StrUtil.isNotEmpty(username), "username", username)
-            .like(StrUtil.isNotEmpty(phoneNumber), "u.phone_number", phoneNumber)
-            .eq(userId != null, "u.user_id", userId)
-            .eq(status != null, "u.status", status)
-            .eq("u.deleted", 0)
-            .and(deptId != null, o ->
-                o.eq("u.dept_id", deptId)
+        // 设置查询条件
+        queryWrapper.like(StrUtil.isNotEmpty(username), "username", username)//模糊查询
+            .like(StrUtil.isNotEmpty(phoneNumber), "u.phone_number", phoneNumber)//模糊查询
+            .eq(userId != null, "u.user_id", userId)//精确查询
+            .eq(status != null, "u.status", status)//精确查询
+            .eq("u.deleted", 0)//精确查询
+            .and(deptId != null, o ->//部门查询
+                o.eq("u.dept_id", deptId)//精确查询
                     .or()
                     .apply("u.dept_id IN ( SELECT t.dept_id FROM sys_dept t WHERE find_in_set(" + deptId
-                        + ", ancestors))"));
+                        + ", ancestors))"));//模糊查询
 
         // 设置排序字段
         this.timeRangeColumn = "u.create_time";

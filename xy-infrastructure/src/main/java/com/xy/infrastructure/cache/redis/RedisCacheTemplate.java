@@ -17,14 +17,12 @@ import java.util.concurrent.TimeUnit;
  */
 @Slf4j
 public class RedisCacheTemplate<T> {
-
     // Redis工具类
     private final RedisUtil redisUtil;
     // Redis缓存键枚举
     private final CacheKeyEnum redisRedisEnum;
     // Guava缓存
     private final LoadingCache<String, Optional<T>> guavaCache;
-
     /**
      * 构造函数，初始化Redis缓存模板
      * @param redisUtil Redis工具类实例
@@ -47,15 +45,13 @@ public class RedisCacheTemplate<T> {
                 .build(new CacheLoader<String, Optional<T>>() {
                     @Override
                     public Optional<T> load(String cachedKey) {
-                        // 从Redis获取缓存值
+                        // 从Redis获取缓存值,如果guava缓存中没有则从Redis中获取！
                         T cacheObject = redisUtil.getCacheObject(cachedKey);
                         log.debug("find the redis cache of key: {} is {}", cachedKey, cacheObject);
                         return Optional.ofNullable(cacheObject);
                     }
                 });
-
     }
-
     /**
      * 根据ID从缓存中获取对象，如果缓存中没有则从DB获取
      * @param id 对象ID
@@ -65,20 +61,17 @@ public class RedisCacheTemplate<T> {
         String cachedKey = generateKey(id);
         try {
             Optional<T> optional = guavaCache.get(cachedKey);
-
-            if (!optional.isPresent()) {
+            if (optional.isEmpty()) {
                 T objectFromDb = getObjectFromDb(id);
                 set(id, objectFromDb);
                 return objectFromDb;
             }
-
-            return optional.get();
+            return optional.get();//返回缓存中的对象
         } catch (ExecutionException e) {
             log.error("Failed to get object from cache", e);
             return null;
         }
     }
-
     /**
      * 从缓存中获取对象，即使找不到的话也不从DB中找
      * @param id 对象ID
@@ -89,7 +82,7 @@ public class RedisCacheTemplate<T> {
         try {
             Optional<T> optional = guavaCache.get(cachedKey);
             log.debug("find the guava cache of key: {}", cachedKey);
-            return optional.orElse(null);
+            return optional.orElse(null);//返回空对象
         } catch (ExecutionException e) {
             log.error("Failed to get object from cache", e);
             return null;

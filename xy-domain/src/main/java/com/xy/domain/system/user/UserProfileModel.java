@@ -6,10 +6,7 @@ import com.xy.domain.EventQueue;
 import com.xy.domain.system.user.command.user.UpdateUserAvatarCommand;
 import com.xy.domain.system.user.command.user.UpdateUserPasswordCommand;
 import com.xy.domain.system.user.command.user.UpdateUserProfileCommand;
-import com.xy.domain.system.user.event.user.UserAvatarUpdateEvent;
-import com.xy.domain.system.user.event.user.UserAvatarUpdateFailedEvent;
-import com.xy.domain.system.user.event.user.UserProfileUpdateEvent;
-import com.xy.domain.system.user.event.user.UserProfileUpdateFailedEvent;
+import com.xy.domain.system.user.event.user.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.BeanUtils;
@@ -64,9 +61,9 @@ public class UserProfileModel {
             eventQueue.enqueue(new UserProfileUpdateFailedEvent());
             return false;
         }
-        UserProfileUpdateEvent userProfileUpdateEvent = new UserProfileUpdateEvent();
-        BeanUtils.copyProperties(command, userProfileUpdateEvent);
-        eventQueue.enqueue(userProfileUpdateEvent);
+        UserPasswordUpdateEvent userPasswordUpdateEvent = new UserPasswordUpdateEvent();
+        BeanUtils.copyProperties(command, userPasswordUpdateEvent);
+        eventQueue.enqueue(userPasswordUpdateEvent);
         return true;
     }
 

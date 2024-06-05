@@ -13,7 +13,5 @@ import java.util.Map;
 public class ConfigDTO {
     //是否使用验证码
     private Boolean isCaptchaOn;
-
     private Map<String, List<DictionaryData>> dictionary;
-
 }

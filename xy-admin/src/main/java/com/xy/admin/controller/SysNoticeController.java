@@ -3,7 +3,6 @@ package com.xy.admin.controller;
 
 import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.xy.admin.customize.aop.accessLog.AccessLog;
 import com.xy.admin.domain.common.CommandInvoker;
 import com.xy.admin.dto.notice.NoticeDTO;
 import com.xy.admin.entity.SysNoticeEntity;
@@ -17,8 +16,9 @@ import com.xy.domain.system.notice.command.UpdateNoticeCommand;
 import com.xy.domain.system.notice.handler.NoticeAddCommandHandler;
 import com.xy.domain.system.notice.handler.NoticeDeleteCommandHandler;
 import com.xy.domain.system.notice.handler.NoticeUpdateCommandHandler;
-import com.xy.infrastructure.annotations.unrepeatable.Unrepeatable;
+import com.xy.infrastructure.annotations.unrepeatable.Unrepeatable1;
 import com.xy.infrastructure.base.BaseController;
+import com.xy.admin.customize.aop.accessLog.AccessLog;
 import com.xy.infrastructure.page.PageDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -29,6 +29,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 import java.util.stream.Collectors;
 /**
@@ -96,7 +97,7 @@ public class SysNoticeController extends BaseController {
      * 新增通知公告
      */
     @Operation(summary = "添加公告")
-    @Unrepeatable(interval = 60, checkType = Unrepeatable.CheckType.SYSTEM_USER)
+    @Unrepeatable1(interval = 60, checkType = Unrepeatable1.CheckType.SYSTEM_USER)
     @PreAuthorize("@permission.has('system:notice:add')")
     @AccessLog(title = "通知公告", businessType = BusinessTypeEnum.ADD)
     @PostMapping

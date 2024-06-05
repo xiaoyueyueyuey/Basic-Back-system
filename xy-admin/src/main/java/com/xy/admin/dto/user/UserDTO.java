@@ -45,7 +45,6 @@ public class UserDTO {
 
         }
     }
-
     public UserDTO(SearchUserDO entity) {
         if (entity != null) {
             BeanUtil.copyProperties(entity, this);
@@ -56,7 +55,6 @@ public class UserDTO {
             }
         }
     }
-
 
     @ExcelColumn(name = "用户ID")
     private Long userId;

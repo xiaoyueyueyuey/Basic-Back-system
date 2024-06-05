@@ -114,7 +114,7 @@ public class PostModel {
 
     }
     public void checkCanBeDelete() {
-        if (postIsAssignedCount > 0 && postId != null) {
+        if (postIsAssignedCount !=null&& postIsAssignedCount > 0){
             throw new ApiException(ErrorCode.Business.POST_ALREADY_ASSIGNED_TO_USER_CAN_NOT_BE_DELETED);
         }
     }

@@ -8,6 +8,8 @@ import com.xy.domain.system.post.command.DeletePostCommand;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Component;
 
+import java.util.Collections;
+
 @Component
 
 public class DeletePostCommandHandler implements CommandHandler<DeletePostCommand> {
@@ -19,7 +21,7 @@ public class DeletePostCommandHandler implements CommandHandler<DeletePostComman
 
         Boolean handle = model.handle(eventQueue, command);
         if (handle) {
-            return postRepository.deleteById(command.getPostId());
+            return postRepository.deleteBatchByIds(Collections.singletonList(command.getPostId()));
         }
         return false;
     }

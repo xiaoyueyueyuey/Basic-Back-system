@@ -1,7 +1,6 @@
 package com.xy.admin.controller;
 
 import cn.hutool.core.lang.tree.Tree;
-import com.xy.admin.customize.aop.accessLog.AccessLog;
 import com.xy.admin.domain.common.CommandInvoker;
 import com.xy.admin.dto.dept.DeptDTO;
 import com.xy.admin.entity.SysDeptEntity;
@@ -16,6 +15,7 @@ import com.xy.domain.system.dept.handler.AddDeptCommandHandler;
 import com.xy.domain.system.dept.handler.DeleteDeptCommandHandler;
 import com.xy.domain.system.dept.handler.UpdateDeptCommandHandler;
 import com.xy.infrastructure.base.BaseController;
+import com.xy.admin.customize.aop.accessLog.AccessLog;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;

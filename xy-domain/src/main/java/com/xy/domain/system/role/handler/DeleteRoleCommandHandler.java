@@ -8,6 +8,8 @@ import com.xy.domain.system.role.command.DeleteRoleCommand;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Component;
 
+import java.util.Collections;
+
 @Component
 public class DeleteRoleCommandHandler implements CommandHandler<DeleteRoleCommand> {
     @Resource
@@ -17,7 +19,7 @@ public class DeleteRoleCommandHandler implements CommandHandler<DeleteRoleComman
         RoleModel model = roleRepository.findByIdOrError(command.getRoleId());
         Boolean handle = model.handle(eventQueue, command);
         if(handle){
-            return roleRepository.deleteById(model.getRoleId());
+            return roleRepository.deleteBatchByIds(Collections.singletonList(model.getRoleId()));
         }
         return false;
     }

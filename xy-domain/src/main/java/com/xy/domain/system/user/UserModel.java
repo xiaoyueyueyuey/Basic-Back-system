@@ -82,24 +82,16 @@ public class UserModel {
         return true;
     }
     public Boolean handle(EventQueue eventQueue, DeleteUserCommand command){
-        try {
-            checkUserIsExist();
-        } catch (ApiException e) {
-            eventQueue.enqueue(new UserDeleteFailedEvent());
-            return false;
-        }
         UserDeleteEvent userDeleteEvent = new UserDeleteEvent();
-        BeanUtils.copyProperties(command, userDeleteEvent);
+        userDeleteEvent.setUserId(command.getUserId());
         eventQueue.enqueue(userDeleteEvent);
         return true;
     }
-
     public void checkUserIsExist() {
         if (userId == null) {
             throw new ApiException(ErrorCode.Business.USER_NON_EXIST);
         }
     }
-
     public void checkUsernameIsUnique() {
         if (!userNameIsUnique) {
             throw new ApiException(ErrorCode.Business.USER_NAME_IS_NOT_UNIQUE);
@@ -133,5 +125,10 @@ public class UserModel {
         }
     }
 
-
+    public Boolean handle(EventQueue eventQueue, UpdateUserLoginIpAndTimeCommand command) {
+        UserLoginIpAndTimeUpdateEvent userLoginIpAndTimeUpdateEvent = new UserLoginIpAndTimeUpdateEvent();
+        BeanUtils.copyProperties(command, userLoginIpAndTimeUpdateEvent);
+        eventQueue.enqueue(userLoginIpAndTimeUpdateEvent);
+        return true;
+    }
 }

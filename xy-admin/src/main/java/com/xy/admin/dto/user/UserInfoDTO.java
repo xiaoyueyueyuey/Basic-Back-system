@@ -1,6 +1,6 @@
 package com.xy.admin.dto.user;
 
-import com.agileboot.domain.system.role.dto.RoleDTO;
+import com.xy.admin.dto.role.RoleDTO;
 import lombok.Data;
 
 /**
@@ -8,8 +8,6 @@ import lombok.Data;
  */
 @Data
 public class UserInfoDTO {
-
     private UserDTO user;
     private RoleDTO role;
-
 }

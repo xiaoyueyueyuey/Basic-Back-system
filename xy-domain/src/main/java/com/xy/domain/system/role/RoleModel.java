@@ -104,7 +104,7 @@ public class RoleModel  {
         }
     }
     public void checkRoleCanBeDelete() {
-        if (roleIsAssignToUserCount > 0) {
+        if (roleIsAssignToUserCount!=null&&roleIsAssignToUserCount > 0) {
             throw new ApiException(ErrorCode.Business.ROLE_ALREADY_ASSIGN_TO_USER, getRoleName());
         }
     }

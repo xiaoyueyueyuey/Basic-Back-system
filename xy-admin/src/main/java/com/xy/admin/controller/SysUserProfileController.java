@@ -1,7 +1,6 @@
 package com.xy.admin.controller;
 
 import com.xy.admin.common.dto.common.UploadFileDTO;
-import com.xy.admin.customize.aop.accessLog.AccessLog;
 import com.xy.admin.domain.common.CommandInvoker;
 import com.xy.admin.dto.user.UserProfileDTO;
 import com.xy.admin.query.service.SysUserService;
@@ -17,6 +16,7 @@ import com.xy.domain.system.user.handler.user.UpdateProfileCommandHandler;
 import com.xy.domain.system.user.handler.user.UpdateUserAvatarCommandHandler;
 import com.xy.domain.system.user.handler.user.UpdateUserPasswordCommandHandler;
 import com.xy.infrastructure.base.BaseController;
+import com.xy.admin.customize.aop.accessLog.AccessLog;
 import com.xy.infrastructure.user.AuthenticationUtils;
 import com.xy.infrastructure.user.web.SystemLoginUser;
 import com.xy.infrastructure.utils.file.FileUploadUtils;

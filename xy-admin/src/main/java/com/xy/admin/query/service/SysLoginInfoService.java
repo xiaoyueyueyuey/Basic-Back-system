@@ -1,7 +1,10 @@
 package com.xy.admin.query.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.xy.admin.dto.log.LoginLogDTO;
 import com.xy.admin.entity.SysLoginInfoEntity;
+import com.xy.admin.query.LoginLogQuery;
+import com.xy.infrastructure.page.PageDTO;
 
 /**
  * <p>
@@ -13,4 +16,5 @@ import com.xy.admin.entity.SysLoginInfoEntity;
  */
 public interface SysLoginInfoService extends IService<SysLoginInfoEntity> {
 
+    PageDTO<LoginLogDTO> getLoginInfoList(LoginLogQuery query);
 }

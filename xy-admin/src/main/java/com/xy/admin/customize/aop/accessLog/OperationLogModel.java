@@ -20,6 +20,7 @@ import org.springframework.web.servlet.HandlerMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.Serial;
 import java.util.Collection;
 import java.util.Map;
 
@@ -28,11 +29,11 @@ import java.util.Map;
  */
 @Slf4j
 public class OperationLogModel extends SysOperationLogEntity {
+    @Serial
+    private static final long serialVersionUID = 5727869116156811908L;
+    public static final int MAX_DATA_LENGTH = 512;//最大数据长度
 
-    public static final int MAX_DATA_LENGTH = 512;
-
-    HttpServletRequest request = ServletHolderUtil.getRequest();
-
+    HttpServletRequest request = ServletHolderUtil.getRequest();//获取请求
     public void fillOperatorInfo() {
         // 获取当前的用户
         String ip = ServletUtil.getClientIP(request);
@@ -41,10 +42,8 @@ public class OperationLogModel extends SysOperationLogEntity {
         if (loginUser != null) {
             this.setUsername(loginUser.getUsername());
         }
-
         this.setOperationTime(DateUtil.date());
     }
-
 
     public void fillRequestInfo(final JoinPoint joinPoint, AccessLog accessLog, Object jsonResult) {
         this.setRequestUrl(request.getRequestURI());
@@ -90,7 +89,6 @@ public class OperationLogModel extends SysOperationLogEntity {
         }
     }
 
-
     /**
      * 获取请求的参数，放到log中
      *
@@ -98,7 +96,7 @@ public class OperationLogModel extends SysOperationLogEntity {
      */
     private void recordRequestData(JoinPoint joinPoint) {
         RequestMethodEnum requestMethodEnum = BasicEnumUtil.fromValue(RequestMethodEnum.class,
-            this.getRequestMethod());
+                this.getRequestMethod());
 
         if (requestMethodEnum == RequestMethodEnum.GET || requestMethodEnum == RequestMethodEnum.POST) {
             String params = argsArrayToString(joinPoint.getArgs());
@@ -154,7 +152,6 @@ public class OperationLogModel extends SysOperationLogEntity {
             }
         }
         return o instanceof MultipartFile || o instanceof HttpServletRequest || o instanceof HttpServletResponse
-            || o instanceof BindingResult;
+                || o instanceof BindingResult;
     }
-
 }

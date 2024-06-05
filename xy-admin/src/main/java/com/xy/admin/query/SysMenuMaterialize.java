@@ -8,14 +8,14 @@ import com.xy.domain.DomainEventListener;
 import com.xy.domain.system.menu.event.MenuAddEvent;
 import com.xy.domain.system.menu.event.MenuDeleteEvent;
 import com.xy.domain.system.menu.event.MenuUpdateEvent;
-import jakarta.annotation.Resource;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
+@RequiredArgsConstructor
 
 @Component
 public class SysMenuMaterialize implements DomainEventListener {
-    @Resource
-    private SysMenuMapper sysMenuMapper;
+    private final SysMenuMapper sysMenuMapper;
 
     @Override
     public void onEvent(DomainEvent event) {

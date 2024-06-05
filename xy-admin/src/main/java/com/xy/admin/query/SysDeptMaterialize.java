@@ -11,14 +11,13 @@ import com.xy.domain.DomainEventListener;
 import com.xy.domain.system.dept.event.DeptAddEvent;
 import com.xy.domain.system.dept.event.DeptDeleteEvent;
 import com.xy.domain.system.dept.event.DeptUpdateEvent;
-import jakarta.annotation.Resource;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
-
+@RequiredArgsConstructor
 @Component
 public class SysDeptMaterialize implements DomainEventListener {
-    @Resource
-    private SysDeptMapper mapper;
+    private final SysDeptMapper mapper;
 
     @Override
     public void onEvent(DomainEvent event) {

@@ -4,7 +4,7 @@ import com.xy.common.exception.ApiException;
 import com.xy.domain.CommandHandler;
 import com.xy.domain.EventQueue;
 import com.xy.domain.system.Command;
-import jakarta.annotation.Resource;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,9 +14,9 @@ import java.util.function.Function;
 
 @Slf4j
 @Component
+@RequiredArgsConstructor
 public class OneTransactionCommandInvoker implements CommandInvoker {
-    @Resource
-    private DomainEventDispatcher domainEventDispatcher;
+    private final DomainEventDispatcher domainEventDispatcher;
 
     @Override
     public <T> T invoke(Function<EventQueue, T> run) {
@@ -38,7 +38,7 @@ public class OneTransactionCommandInvoker implements CommandInvoker {
                 log.error("Error during command handling", e);
                 // 回滚事务
                 TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
-                return false;
+                throw e;
             }
         });
     }

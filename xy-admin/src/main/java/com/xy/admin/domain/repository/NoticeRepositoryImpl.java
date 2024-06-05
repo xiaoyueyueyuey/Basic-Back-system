@@ -4,12 +4,15 @@ import com.xy.admin.entity.SysNoticeEntity;
 import com.xy.admin.mapper.SysNoticeMapper;
 import com.xy.domain.system.notice.NoticeModel;
 import com.xy.domain.system.notice.NoticeRepository;
-import jakarta.annotation.Resource;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Component;
 
+import java.util.List;
+@RequiredArgsConstructor
+@Component
 public class NoticeRepositoryImpl implements NoticeRepository {
-    @Resource
-    private SysNoticeMapper sysNoticeMapper;
+    private final SysNoticeMapper sysNoticeMapper;
 
     @Override
     public NoticeModel findByIdOrError(Long id) {
@@ -30,7 +33,7 @@ public class NoticeRepositoryImpl implements NoticeRepository {
     }
 
     @Override
-    public Boolean deleteById(Long id) {
-        return sysNoticeMapper.deleteById(id) > 0;
+    public Boolean deleteBatchByIds(List<Long> ids) {
+        return sysNoticeMapper.deleteBatchIds(ids) > 0;
     }
 }

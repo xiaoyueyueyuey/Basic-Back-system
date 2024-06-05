@@ -2,6 +2,7 @@ package com.xy.admin.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.xy.admin.entity.SysRoleMenuEntity;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -11,6 +12,8 @@ import com.xy.admin.entity.SysRoleMenuEntity;
  * @author valarchie
  * @since 2022-06-16
  */
+@Mapper
+
 public interface SysRoleMenuMapper extends BaseMapper<SysRoleMenuEntity> {
 
 }

@@ -7,14 +7,14 @@ import com.xy.domain.DomainEventListener;
 import com.xy.domain.system.notice.event.NoticeAddEvent;
 import com.xy.domain.system.notice.event.NoticeDeleteEvent;
 import com.xy.domain.system.notice.event.NoticeUpdateEvent;
-import jakarta.annotation.Resource;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
+@RequiredArgsConstructor
 
 @Component
 public class SysNoticeMaterialize implements DomainEventListener {
-    @Resource
-    private SysNoticeMapper sysNoticeMapper;
+    private final SysNoticeMapper sysNoticeMapper;
     @Override
     public void onEvent(DomainEvent event) {
         if(event instanceof NoticeAddEvent) addSysNotice((NoticeAddEvent) event);

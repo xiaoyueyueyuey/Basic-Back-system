@@ -7,14 +7,14 @@ import com.xy.domain.DomainEventListener;
 import com.xy.domain.system.post.event.PostAddEvent;
 import com.xy.domain.system.post.event.PostDeleteEvent;
 import com.xy.domain.system.post.event.PostUpdateEvent;
-import jakarta.annotation.Resource;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
+@RequiredArgsConstructor
 
 @Component
 public class SysPostMaterialize implements DomainEventListener {
-    @Resource
-    private SysPostMapper sysPostMapper;
+    final SysPostMapper sysPostMapper;
 
     @Override
     public void onEvent(DomainEvent event) {

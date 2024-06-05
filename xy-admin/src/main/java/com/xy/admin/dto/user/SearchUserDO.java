@@ -11,8 +11,6 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class SearchUserDO extends SysUserEntity {
-
-    private String deptName;
-    private String deptLeader;
-
+    private String deptName;//部门名称
+    private String deptLeader;//部门负责人
 }

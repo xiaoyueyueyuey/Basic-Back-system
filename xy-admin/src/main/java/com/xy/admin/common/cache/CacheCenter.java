@@ -33,6 +33,7 @@ public class CacheCenter {
     public static RedisCacheTemplate<SysRoleEntity> roleCache;
 
     public static RedisCacheTemplate<SysPostEntity> postCache;
+    public static RedisCacheTemplate<String> unrepeatableTokenCache;
 
     @PostConstruct
     public void init() {
@@ -46,6 +47,7 @@ public class CacheCenter {
         userCache = redisCache.userCache;
         roleCache = redisCache.roleCache;
         postCache = redisCache.postCache;
+        unrepeatableTokenCache = redisCache.unrepeatableTokenCache;
     }
 
 }

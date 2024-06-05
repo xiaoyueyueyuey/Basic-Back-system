@@ -26,5 +26,4 @@ public class LoginCommand {
      * 唯一标识
      */
     private String captchaCodeKey;
-
 }

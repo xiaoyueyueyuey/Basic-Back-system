@@ -6,14 +6,16 @@ import com.xy.admin.entity.agg.SysDeptAggEntity;
 import com.xy.admin.mapper.agg.SysDeptAggMapper;
 import com.xy.domain.system.dept.DeptModel;
 import com.xy.domain.system.dept.DeptRepository;
-import jakarta.annotation.Resource;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+@RequiredArgsConstructor
 @Component
 public class DeptRepositoryImpl implements DeptRepository {
-    @Resource
-    private SysDeptAggMapper mapper;
+
+    private final SysDeptAggMapper mapper;
     @Override
     public DeptModel findByIdOrError(Long id) {
         SysDeptAggEntity sysDeptAggEntity = mapper.selectById(id);
@@ -37,8 +39,8 @@ public class DeptRepositoryImpl implements DeptRepository {
     }
 
     @Override
-    public Boolean deleteById(Long id) {
-        return mapper.deleteById(id) > 0;
+    public Boolean deleteBatchByIds(List<Long> ids) {
+        return mapper.deleteBatchIds(ids) > 0;
     }
 
     @Override

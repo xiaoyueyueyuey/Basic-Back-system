@@ -5,12 +5,17 @@ import com.xy.admin.entity.agg.SysPostAggEntity;
 import com.xy.admin.mapper.agg.SysPostAggMapper;
 import com.xy.domain.system.post.PostModel;
 import com.xy.domain.system.post.PostRepository;
-import jakarta.annotation.Resource;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Component;
 
-public class PostRepositoryImpl implements PostRepository{
-    @Resource
-    private SysPostAggMapper sysPostAggMapper;
+import java.util.List;
+
+@RequiredArgsConstructor
+@Component
+public class PostRepositoryImpl implements PostRepository {
+    private final SysPostAggMapper sysPostAggMapper;
+
     @Override
     public PostModel findByIdOrError(Long id) {
         SysPostAggEntity sysPostAggEntity = sysPostAggMapper.selectById(id);
@@ -28,7 +33,7 @@ public class PostRepositoryImpl implements PostRepository{
     }
 
     @Override
-    public Boolean deleteById(Long id) {
+    public Boolean deleteBatchByIds(List<Long> ids) {
         return null;
     }
 
@@ -37,6 +42,7 @@ public class PostRepositoryImpl implements PostRepository{
         return sysPostAggMapper.exists(new LambdaQueryWrapper<SysPostAggEntity>()
                 .eq(SysPostAggEntity::getPostName, postName));
     }
+
     @Override
     public Boolean checkPostCodeUnique(String postCode) {
         return sysPostAggMapper.exists(new LambdaQueryWrapper<SysPostAggEntity>()

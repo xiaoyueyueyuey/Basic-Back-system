@@ -9,16 +9,18 @@ import com.xy.domain.DomainEvent;
 import com.xy.domain.DomainEventListener;
 import com.xy.domain.system.role.event.*;
 import jakarta.annotation.Resource;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
 import java.util.HashSet;
 import java.util.List;
+@RequiredArgsConstructor
 
 @Component
 public class SysRoleMaterialize implements DomainEventListener {
     @Resource
-    private SysRoleMapper sysRoleMapper;
+    private final SysRoleMapper sysRoleMapper;
     @Override
     public void onEvent(DomainEvent event) {
         if(event instanceof RoleUpdateEvent){

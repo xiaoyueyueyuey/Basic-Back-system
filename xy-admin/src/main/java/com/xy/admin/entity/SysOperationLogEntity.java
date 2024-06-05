@@ -21,7 +21,6 @@ import java.util.Date;
 @Schema(description = "SysOperationLogEntity对象 操作日志记录")
 public class SysOperationLogEntity implements Serializable {
 
-
     @Serial
     private static final long serialVersionUID = 6803420836489933596L;
     @Schema(description = "日志主键")

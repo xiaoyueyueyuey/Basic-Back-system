@@ -8,6 +8,8 @@ import com.xy.domain.system.user.command.manager.DeleteUserCommand;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Component;
 
+import java.util.Collections;
+
 @Component
 public class DeleteUserCommandHandler implements CommandHandler<DeleteUserCommand> {
     @Resource
@@ -16,10 +18,10 @@ public class DeleteUserCommandHandler implements CommandHandler<DeleteUserComman
 
     @Override
     public Boolean handle(EventQueue eventQueue, DeleteUserCommand command) {
-        UserModel byIdOrError = userRepository.findByIdOrError(command.getUserId());
-        Boolean handle = byIdOrError.handle(eventQueue, command);
+        UserModel userModel = new UserModel();
+        Boolean handle = userModel.handle(eventQueue, command);
         if (handle) {
-            return userRepository.deleteById(byIdOrError.getUserId());
+            return userRepository.deleteBatchByIds(Collections.singletonList(userModel.getUserId()));
         }
         return false;
     }

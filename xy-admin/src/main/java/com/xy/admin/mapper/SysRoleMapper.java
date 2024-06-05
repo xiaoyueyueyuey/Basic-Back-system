@@ -1,8 +1,9 @@
 package com.xy.admin.mapper;
 
-import com.agileboot.domain.system.menu.db.SysMenuEntity;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.xy.admin.entity.SysMenuEntity;
 import com.xy.admin.entity.SysRoleEntity;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -15,6 +16,8 @@ import java.util.List;
  * @author valarchie
  * @since 2022-06-16
  */
+@Mapper
+
 public interface SysRoleMapper extends BaseMapper<SysRoleEntity> {
 
     /**

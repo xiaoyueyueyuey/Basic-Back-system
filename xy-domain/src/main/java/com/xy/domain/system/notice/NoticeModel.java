@@ -24,28 +24,29 @@ public class NoticeModel {
     private Integer status;
 
     public Boolean handler(EventQueue eventQueue, AddNoticeCommand command) {
-        BeanUtils.copyProperties(command,this);//将command的属性拷贝到聚合中
+        BeanUtils.copyProperties(command, this);//将command的属性拷贝到聚合中
         try {
             checkFields();
-        }catch (ApiException e) {
+        } catch (ApiException e) {
             eventQueue.enqueue(new NoticeDeleteFailedEvent());
             return false;
         }
         //将command的属性拷贝到event中
         NoticeAddEvent noticeAddEvent = new NoticeAddEvent();
-        BeanUtils.copyProperties(command,noticeAddEvent);
+        BeanUtils.copyProperties(command, noticeAddEvent);
         eventQueue.enqueue(noticeAddEvent);
         return true;
     }
+
     public Boolean handler(EventQueue eventQueue, UpdateNoticeCommand command) {
-        if(noticeId != null){
+        if (noticeId != null) {
             try {
                 checkFields();
-            }catch (ApiException e) {
+            } catch (ApiException e) {
                 eventQueue.enqueue(new NoticeDeleteFailedEvent());
                 return false;
             }
-        }else {
+        } else {
             eventQueue.enqueue(new NoticeDeleteFailedEvent());
             return false;
         }
@@ -54,19 +55,15 @@ public class NoticeModel {
     }
 
     public Boolean handle(EventQueue eventQueue, DeleteNoticeCommand command) {
-        if (noticeId != null) {
-            eventQueue.enqueue(new NoticeDeleteEvent(noticeId));
-        }else{
-            eventQueue.enqueue(new NoticeDeleteEvent(command.getNoticeId()));
-            return false;
-        }
-        return  true;
+        eventQueue.enqueue(new NoticeDeleteEvent(command.getNoticeId()));
+        return true;
     }
+
     /**
      * 检查字段是否合法
      */
     public void checkFields() {
-            // 检查枚举值是否合法
+        // 检查枚举值是否合法
         try {
             BasicEnumUtil.fromValue(NoticeTypeEnum.class, getNoticeType());
         } catch (ApiException e) {
@@ -75,7 +72,7 @@ public class NoticeModel {
         try {
             BasicEnumUtil.fromValue(StatusEnum.class, getStatus());
         } catch (ApiException e) {
-           throw new ApiException(ErrorCode.Business.NOTICE_STATUS_IS_NOT_EXIST);
+            throw new ApiException(ErrorCode.Business.NOTICE_STATUS_IS_NOT_EXIST);
         }
 
 

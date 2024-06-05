@@ -3,12 +3,14 @@ package com.xy.infrastructure.user.web;
 
 import com.xy.infrastructure.user.base.BaseLoginUser;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
  * 登录用户身份权限
  * @author valarchie
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 public class SystemLoginUser extends BaseLoginUser {
@@ -26,7 +28,6 @@ public class SystemLoginUser extends BaseLoginUser {
      */
     private Long autoRefreshCacheTime;
 
-
     public SystemLoginUser(Long userId, Boolean isAdmin, String username, String password, RoleInfo roleInfo,
         Long deptId) {
         this.userId = userId;
@@ -37,17 +38,18 @@ public class SystemLoginUser extends BaseLoginUser {
         this.deptId = deptId;
     }
 
-    public RoleInfo getRoleInfo() {
-        return roleInfo;
-    }
+
 
     public Long getRoleId() {
         return getRoleInfo().getRoleId();
     }
-
-    public Long getDeptId() {
-        return deptId;
-    }
+//    public RoleInfo getRoleInfo() {
+//        return roleInfo;
+//    }
+//
+//    public Long getDeptId() {
+//        return deptId;
+//    }
 
 
 }

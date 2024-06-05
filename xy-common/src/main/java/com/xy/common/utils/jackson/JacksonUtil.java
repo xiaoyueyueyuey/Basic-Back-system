@@ -18,7 +18,6 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.StringUtils;
 
@@ -37,7 +36,6 @@ import java.util.*;
  * 支持的数据源最广泛（字符串，对象，文件、流、URL）
  * @author valarchie
  */
-@Slf4j
 public class JacksonUtil {
 
     private static ObjectMapper mapper;
@@ -77,7 +75,6 @@ public class JacksonUtil {
             .enable(JSON_READ_FEATURES_ENABLED.toArray(new JsonReadFeature[0]));
         return initMapperConfig(builder.build());
     }
-
     public static ObjectMapper initMapperConfig(ObjectMapper objectMapper) {
         String dateTimeFormat = "yyyy-MM-dd HH:mm:ss";
         objectMapper.setDateFormat(new SimpleDateFormat(dateTimeFormat));
@@ -117,7 +114,6 @@ public class JacksonUtil {
     public static ObjectMapper getObjectMapper() {
         return mapper;
     }
-
     /**
      * JSON反序列化
      */
@@ -128,7 +124,6 @@ public class JacksonUtil {
             throw new JacksonException(StrUtil.format("jackson from error, url: {}, type: {}", url.getPath(), type), e);
         }
     }
-
     /**
      * JSON反序列化
      */

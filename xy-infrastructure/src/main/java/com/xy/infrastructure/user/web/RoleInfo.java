@@ -14,14 +14,11 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RoleInfo {
-
     public static final RoleInfo EMPTY_ROLE = new RoleInfo();
     public static final long ADMIN_ROLE_ID = -1;
     public static final String ADMIN_ROLE_KEY = "admin";
     public static final String ALL_PERMISSIONS = "*:*:*";
-
     public static final Set<String> ADMIN_PERMISSIONS = SetUtils.hashSet(ALL_PERMISSIONS);
-
 
     public RoleInfo(Long roleId, String roleKey, DataScopeEnum dataScope, Set<Long> deptIdSet,
         Set<String> menuPermissions, Set<Long> menuIds) {
@@ -32,7 +29,6 @@ public class RoleInfo {
         this.menuPermissions = menuPermissions != null ? menuPermissions : SetUtils.emptySet();
         this.menuIds = menuIds != null ? menuIds : SetUtils.emptySet();
     }
-
 
     private Long roleId;
     private String roleName;

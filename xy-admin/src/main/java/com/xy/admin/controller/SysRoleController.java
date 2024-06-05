@@ -2,7 +2,6 @@ package com.xy.admin.controller;
 
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.xy.admin.customize.aop.accessLog.AccessLog;
 import com.xy.admin.domain.common.CommandInvoker;
 import com.xy.admin.dto.role.RoleDTO;
 import com.xy.admin.dto.user.UserDTO;
@@ -16,6 +15,7 @@ import com.xy.common.enums.common.BusinessTypeEnum;
 import com.xy.domain.system.role.command.*;
 import com.xy.domain.system.role.handler.*;
 import com.xy.infrastructure.base.BaseController;
+import com.xy.admin.customize.aop.accessLog.AccessLog;
 import com.xy.infrastructure.page.PageDTO;
 import com.xy.infrastructure.utils.poi.CustomExcelUtil;
 import io.swagger.v3.oas.annotations.Operation;
@@ -59,7 +59,6 @@ public class SysRoleController extends BaseController {
     @Resource
     public AddRoleCommandHandler addRoleCommandHandler;
 
-//    private final RoleApplicationService roleApplicationService;
 
     @Operation(summary = "角色列表")
     @PreAuthorize("@permission.has('system:role:list')")
@@ -184,7 +183,6 @@ public class SysRoleController extends BaseController {
         PageDTO<UserDTO> page = sysRoleService.getAllocatedUserList(query);
         return BaseResponseData.ok(page);
     }
-
     /**
      * 查询未分配用户角色列表
      */
@@ -200,26 +198,28 @@ public class SysRoleController extends BaseController {
     /**
      * 批量取消授权用户
      */
-    @Operation(summary = "批量解除角色和用户的关联")
-    @PreAuthorize("@permission.has('system:role:edit')")
-    @AccessLog(title = "角色管理", businessType = BusinessTypeEnum.GRANT)
-    @DeleteMapping("/users/{userIds}/grant/bulk")
-    public BaseResponseData<Void> deleteRoleOfUserByBulk(@PathVariable("userIds") List<Long> userIds) {
-        roleApplicationService.deleteRoleOfUserByBulk(userIds);
-        return BaseResponseData.ok();
-    }
+//    @Operation(summary = "批量解除角色和用户的关联")
+//    @PreAuthorize("@permission.has('system:role:edit')")
+//    @AccessLog(title = "角色管理", businessType = BusinessTypeEnum.GRANT)
+//    @DeleteMapping("/users/{userIds}/grant/bulk")
+//    public BaseResponseData<Void> deleteRoleOfUserByBulk(@PathVariable("userIds") List<Long> userIds) {
+//
+//        roleApplicationService.deleteRoleOfUserByBulk(userIds);
+//        return BaseResponseData.ok();
+//    }
 
     /**
      * 批量选择用户授权
      */
-    @Operation(summary = "批量添加用户和角色关联")
-    @PreAuthorize("@permission.has('system:role:edit')")
-    @AccessLog(title = "角色管理", businessType = BusinessTypeEnum.GRANT)
-    @PostMapping("/{roleId}/users/{userIds}/grant/bulk")
-    public BaseResponseData<Void> addRoleForUserByBulk(@PathVariable("roleId") Long roleId,
-                                                       @PathVariable("userIds") List<Long> userIds) {
-        roleApplicationService.addRoleOfUserByBulk(roleId, userIds);
-        return BaseResponseData.ok();
-    }
+//    @Operation(summary = "批量添加用户和角色关联")
+//    @PreAuthorize("@permission.has('system:role:edit')")
+//    @AccessLog(title = "角色管理", businessType = BusinessTypeEnum.GRANT)
+//    @PostMapping("/{roleId}/users/{userIds}/grant/bulk")
+//    public BaseResponseData<Void> addRoleForUserByBulk(@PathVariable("roleId") Long roleId,
+//                                                       @PathVariable("userIds") List<Long> userIds) {
+//
+//        roleApplicationService.addRoleOfUserByBulk(roleId, userIds);
+//        return BaseResponseData.ok();
+//    }
 
 }

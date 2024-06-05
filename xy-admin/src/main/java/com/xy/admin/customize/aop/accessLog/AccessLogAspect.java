@@ -29,7 +29,6 @@ public class AccessLogAspect {
     public void doAfterReturning(JoinPoint joinPoint, AccessLog controllerLog, Object jsonResult) {
         handleLog(joinPoint, controllerLog, null, jsonResult);
     }
-
     /**
      * 拦截异常操作
      *
@@ -40,7 +39,6 @@ public class AccessLogAspect {
     public void doAfterThrowing(JoinPoint joinPoint, AccessLog controllerLog, Exception e) {
         handleLog(joinPoint, controllerLog, e, null);
     }
-
     protected void handleLog(final JoinPoint joinPoint, AccessLog accessLog, final Exception e, Object jsonResult) {
         try {
             OperationLogModel operationLog = new OperationLogModel();

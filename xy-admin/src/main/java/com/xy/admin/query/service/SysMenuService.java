@@ -4,6 +4,7 @@ import cn.hutool.core.lang.tree.Tree;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.xy.admin.dto.menu.MenuDTO;
 import com.xy.admin.dto.menu.MenuDetailDTO;
+import com.xy.admin.dto.menu.RouterDTO;
 import com.xy.admin.entity.SysMenuEntity;
 import com.xy.admin.query.MenuQuery;
 import com.xy.infrastructure.user.web.SystemLoginUser;
@@ -26,4 +27,6 @@ public interface SysMenuService extends IService<SysMenuEntity> {
     List<SysMenuEntity> getMenuListByUserId(Long userId);
 
     List<Long> getMenuIdsByRoleId(Long roleId);
+
+    List<RouterDTO> getRouterTree(SystemLoginUser loginUser);
 }

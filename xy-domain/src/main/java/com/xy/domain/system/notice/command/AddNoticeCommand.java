@@ -18,9 +18,7 @@ public class AddNoticeCommand implements Command {
     @NotBlank(message = "公告标题不能为空")
     @Size(max = 50, message = "公告标题不能超过50个字符")
     private String noticeTitle;
-
     private Integer noticeType;
-
     /**
      * 想要支持富文本的话, 避免Xss过滤的话， 请加上@JsonDeserialize(using = StringDeserializer.class) 注解
      */

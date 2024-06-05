@@ -3,15 +3,16 @@ package com.xy.admin.domain.repository;
 import com.xy.admin.mapper.SysConfigMapper;
 import com.xy.domain.system.config.ConfigModel;
 import com.xy.domain.system.config.ConfigRepository;
-import jakarta.annotation.Resource;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Set;
+@RequiredArgsConstructor
 
 @Component
 public class ConfigRepositoryImpl implements ConfigRepository {
-    @Resource
-    private SysConfigMapper sysConfigMapper;
+    private final SysConfigMapper sysConfigMapper;
     @Override
     public ConfigModel findByIdOrError(Long id) {
         return null;
@@ -23,7 +24,7 @@ public class ConfigRepositoryImpl implements ConfigRepository {
     }
 
     @Override
-    public Boolean deleteById(Long id) {
+    public Boolean deleteBatchByIds(List<Long> ids) {
         return null;
     }
 

@@ -2,7 +2,6 @@ package com.xy.admin.controller;
 
 
 import com.xy.admin.common.cache.CacheCenter;
-import com.xy.admin.customize.aop.accessLog.AccessLog;
 import com.xy.admin.domain.common.CommandInvoker;
 import com.xy.admin.dto.config.ConfigDTO;
 import com.xy.admin.query.ConfigQuery;
@@ -12,6 +11,7 @@ import com.xy.common.enums.common.BusinessTypeEnum;
 import com.xy.domain.system.config.UpdateConfigCommand;
 import com.xy.domain.system.config.UpdateConfigCommandHandler;
 import com.xy.infrastructure.base.BaseController;
+import com.xy.admin.customize.aop.accessLog.AccessLog;
 import com.xy.infrastructure.page.PageDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -33,15 +33,12 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @Tag(name = "配置API", description = "配置相关的增删查改")
 public class SysConfigController extends BaseController {
-
     @Resource
     private SysConfigService sysConfigService;
-
     @Resource
     private CommandInvoker commandInvoker;
     @Resource
     private UpdateConfigCommandHandler updateConfigCommandHandler;
-
     /**
      * 获取参数配置列表
      */

@@ -13,10 +13,10 @@ import com.xy.infrastructure.base.BaseController;
 import com.xy.infrastructure.page.PageDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.annotation.Resource;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 /**
  * 缓存监控
@@ -30,7 +30,6 @@ import java.util.List;
 public class MonitorController extends BaseController {
 
     private final MonitorServiceImpl monitorServiceImpl;
-    @Resource
     @Operation(summary = "Redis信息")
     @PreAuthorize("@permission.has('monitor:cache:list')")
     @GetMapping("/cacheInfo")

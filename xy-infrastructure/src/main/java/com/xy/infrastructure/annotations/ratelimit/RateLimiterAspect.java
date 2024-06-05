@@ -21,7 +21,6 @@ import java.lang.reflect.Method;
 @Aspect
 @Component
 @Slf4j
-//@ConditionalOnExpression("'${agileboot.embedded.redis}' != 'true'")
 @RequiredArgsConstructor
 public class RateLimiterAspect {
 
@@ -29,13 +28,11 @@ public class RateLimiterAspect {
 
     private final MapRateLimitChecker mapRateLimitChecker;
 
-
     @Before("@annotation(rateLimiter)")
     public void doBefore(JoinPoint point, RateLimit rateLimiter) {
         MethodSignature signature = (MethodSignature) point.getSignature();
         Method method = signature.getMethod();
         log.info("当前限流方法:" + method.toGenericString());
-
         switch (rateLimiter.cacheType()) {
             case REDIS:
                 redisRateLimitChecker.check(rateLimiter);

@@ -8,6 +8,7 @@ import com.xy.admin.dto.user.SearchUserDO;
 import com.xy.admin.entity.SysPostEntity;
 import com.xy.admin.entity.SysRoleEntity;
 import com.xy.admin.entity.SysUserEntity;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
@@ -22,6 +23,7 @@ import java.util.Set;
  * @author valarchie
  * @since 2022-06-16
  */
+@Mapper
 public interface SysUserMapper extends BaseMapper<SysUserEntity> {
 
     /**

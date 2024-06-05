@@ -48,7 +48,6 @@ public class RedisCacheBean implements Cache {
 
     /*-----------------------暂时不用实现的方法-----------------*/
 
-
     @Override
     public <T> T get(Object key, Class<T> type) {
         return null;

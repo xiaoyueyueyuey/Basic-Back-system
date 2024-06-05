@@ -10,21 +10,21 @@ import com.xy.admin.mapper.agg.SysDeptAggMapper;
 import com.xy.admin.mapper.agg.SysPostAggMapper;
 import com.xy.admin.mapper.agg.SysUserAggMapper;
 import com.xy.domain.system.user.UserModel;
+import com.xy.domain.system.user.UserProfileModel;
 import com.xy.domain.system.user.UserRepository;
-import jakarta.annotation.Resource;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+@RequiredArgsConstructor
+
 @Component
 public class UserRepositoryImpl implements UserRepository {
-    @Resource
-    private SysUserAggMapper sysUserAggMapper;
-    @Resource
-    private SysRoleMapper sysRoleMapper;
-    @Resource
-    private SysDeptAggMapper sysDeptAggMapper;
-    @Resource
-    private SysPostAggMapper sysPostAggMapper;
+    private final SysUserAggMapper sysUserAggMapper;
+    private final SysRoleMapper sysRoleMapper;
+    private final SysDeptAggMapper sysDeptAggMapper;
+    private final SysPostAggMapper sysPostAggMapper;
     @Override
     public UserModel findByIdOrError(Long id) {
         SysUserAggEntity sysUserAggEntity = sysUserAggMapper.selectById(id);
@@ -49,9 +49,9 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public Boolean deleteById(Long id) {
+    public Boolean deleteBatchByIds(List<Long> ids) {
 
-        return sysUserAggMapper.deleteById(id) > 0;
+        return sysUserAggMapper.deleteBatchIds(ids) > 0;
     }
 
     @Override
@@ -98,5 +98,15 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public Boolean checkPostIsExist(Long postId) {
         return sysPostAggMapper.exists(new LambdaQueryWrapper<SysPostAggEntity>().eq(SysPostAggEntity::getPostId, postId));
+    }
+
+    @Override
+    public String getPasswordByUserId(Long userId) {
+        return sysUserAggMapper.getPasswordByUserId(userId);
+    }
+
+    @Override
+    public Boolean save(UserProfileModel model) {
+        return null;
     }
 }

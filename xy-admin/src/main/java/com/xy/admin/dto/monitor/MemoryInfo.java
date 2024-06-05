@@ -1,7 +1,7 @@
 package com.xy.admin.dto.monitor;
 
 import cn.hutool.core.util.NumberUtil;
-import com.agileboot.common.constant.Constants;
+import com.xy.common.constant.Constants;
 import lombok.Data;
 
 /**
@@ -16,7 +16,6 @@ public class MemoryInfo {
      * 内存总量
      */
     private double total;
-
     /**
      * 已用内存
      */

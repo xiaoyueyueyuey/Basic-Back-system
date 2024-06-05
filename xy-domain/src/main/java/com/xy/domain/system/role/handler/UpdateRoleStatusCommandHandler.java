@@ -5,11 +5,14 @@ import com.xy.domain.EventQueue;
 import com.xy.domain.system.role.RoleModel;
 import com.xy.domain.system.role.RoleRepository;
 import com.xy.domain.system.role.command.UpdateRoleStatusCommand;
-import jakarta.annotation.Resource;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
+@Component
+@RequiredArgsConstructor
 public class UpdateRoleStatusCommandHandler implements CommandHandler<UpdateRoleStatusCommand> {
-    @Resource
-    private RoleRepository roleRepository;
+
+    private final RoleRepository roleRepository;
 
     @Override
     public Boolean handle(EventQueue eventQueue, UpdateRoleStatusCommand command) {

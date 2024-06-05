@@ -28,6 +28,7 @@ public class MenuModel {
     private Long parentId;//父菜单id
     private Integer parentMenuType;//父菜单类型
     //    private String path;//菜单路径
+
     /**
      * 处理新增菜单命令
      *
@@ -58,16 +59,16 @@ public class MenuModel {
         //command和menuAddEvent的变量是一样的，这里只是为了划分一下
         MenuAddEvent menuAddEvent = new MenuAddEvent();
         BeanUtils.copyProperties(command, menuAddEvent);
-        eventQueue.enqueue(menuAddEvent );
+        eventQueue.enqueue(menuAddEvent);
         return true;
     }
 
     public Boolean handle(EventQueue eventQueue, UpdateMenuCommand command) {
-        if(menuId==null){
+        if (menuId == null) {
             eventQueue.enqueue(new MenuUpdateFailedEvent());
             return false;
         }
-        if(!menuNameIsUnique){
+        if (!menuNameIsUnique) {
             eventQueue.enqueue(new MenuUpdateFailedEvent());
             return false;
         }
@@ -89,13 +90,11 @@ public class MenuModel {
     }
 
     public Boolean handle(EventQueue eventQueue, DeleteMenuCommand command) {
-        if(menuId==null){
+        if (menuId == null) {
             eventQueue.enqueue(new MenuDeletedFailedEvent());
             return false;
         }
         try {
-            //检查是否有子菜单
-            checkHasChildMenus();
             //检查是否有菜单分配给角色
             checkMenuAlreadyAssignToRole();
         } catch (ApiException e) {
@@ -137,6 +136,7 @@ public class MenuModel {
 //            throw new ApiException(ErrorCode.Business.MENU_EXTERNAL_LINK_MUST_BE_HTTP);
 //        }
 //    }
+
     /**
      * 检查菜单父id是否冲突,修改时不允许将自己设置为自己的父id
      */
@@ -145,6 +145,7 @@ public class MenuModel {
             throw new ApiException(ErrorCode.Business.MENU_PARENT_ID_NOT_ALLOW_SELF);
         }
     }
+
     /**
      * 检查菜单是否存在子菜单,用于删除菜单时的检查
      */
@@ -158,7 +159,7 @@ public class MenuModel {
      * 检查菜单是否已经分配给角色,用于删除菜单时的检查
      */
     public void checkMenuAlreadyAssignToRole() {
-        if (menuAssignToRoleCount > 0) {
+        if (menuAssignToRoleCount != null && menuAssignToRoleCount > 0) {
             throw new ApiException(ErrorCode.Business.MENU_ALREADY_ASSIGN_TO_ROLE_NOT_ALLOW_DELETE);
         }
     }

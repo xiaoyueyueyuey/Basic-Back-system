@@ -1,6 +1,7 @@
 package com.xy.admin.entity.agg;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -19,13 +20,13 @@ public class SysRoleAggEntity implements Serializable {
     @TableId(value = "role_id",type = IdType.AUTO)
     private Long roleId;
     @Schema(description = "角色名称")
-    @TableId(value = "role_name")
+    @TableField("role_name")
     private String roleName;
     @Schema(description = "角色权限字符串")
-    @TableId(value = "role_key")
+    @TableField(value = "role_key")
     private String roleKey;
     @Schema(description = "角色分配给用户数")
-    @TableId(value = "role_is_assign_to_user_count")
+    @TableField(value = "role_is_assign_to_user_count")
     private Long roleIsAssignToUserCount;
     @Schema(description = "角色状态（1正常 0停用）")
     private Integer status;

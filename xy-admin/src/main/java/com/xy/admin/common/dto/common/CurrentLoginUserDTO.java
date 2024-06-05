@@ -1,6 +1,6 @@
 package com.xy.admin.common.dto.common;
 
-import com.agileboot.domain.system.user.dto.UserDTO;
+import com.xy.admin.dto.user.UserDTO;
 import lombok.Data;
 
 import java.util.Set;
