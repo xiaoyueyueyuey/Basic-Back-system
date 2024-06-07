@@ -27,7 +27,7 @@ public class NoticeRepositoryImpl implements NoticeRepository {
 
     //不用保存，事件已经包括了聚合，事件保存就好了
     @Override
-    public Boolean save(NoticeModel model) {
+    public Long save(NoticeModel model) {
         return null;
 
     }

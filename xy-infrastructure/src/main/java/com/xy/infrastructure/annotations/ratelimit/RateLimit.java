@@ -1,13 +1,13 @@
 package com.xy.infrastructure.annotations.ratelimit;
 
 
-import cn.hutool.extra.servlet.ServletUtil;
 import com.xy.common.exception.ApiException;
 import com.xy.common.exception.error.ErrorCode;
 import com.xy.infrastructure.user.AuthenticationUtils;
 import com.xy.infrastructure.user.app.AppLoginUser;
 import com.xy.infrastructure.user.web.SystemLoginUser;
 import com.xy.infrastructure.utils.ServletHolderUtil;
+import com.xy.infrastructure.utils.ip.IpUtil;
 
 import java.lang.annotation.*;
 
@@ -63,7 +63,7 @@ public @interface RateLimit {
         IP {
             @Override
             public String generateCombinedKey(RateLimit rateLimiter) {
-                String clientIP = ServletUtil.getClientIP(ServletHolderUtil.getRequest());
+                String clientIP = IpUtil.getClientIP(ServletHolderUtil.getRequest());
                 return rateLimiter.key() + clientIP;
             }
         },

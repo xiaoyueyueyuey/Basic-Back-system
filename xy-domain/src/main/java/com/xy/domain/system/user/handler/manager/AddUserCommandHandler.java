@@ -81,7 +81,9 @@ public class AddUserCommandHandler implements CommandHandler<AddUserCommand> {
         }
         Boolean handle = userModel.handle(eventQueue, command);
         if (handle) {
-            return userRepository.save(userModel);
+            Long userId = userRepository.save(userModel);
+            eventQueue.queue().forEach(event -> event.setAggregateId(userId));
+            return true;
         }
         return false;
 

@@ -22,7 +22,11 @@ public class AddPostCommandHandler implements CommandHandler<AddPostCommand> {
         postModel.setPostNameIsUnique(postNameUnique);
         Boolean handle = postModel.handle(eventQueue, command);
         if (handle) {
-            return postRepository.save(postModel);
+            Long postId = postRepository.save(postModel);
+            eventQueue.queue().forEach(event ->{
+                event.setAggregateId(postId);
+            });
+            return postId>0;
         }
         return false;
 

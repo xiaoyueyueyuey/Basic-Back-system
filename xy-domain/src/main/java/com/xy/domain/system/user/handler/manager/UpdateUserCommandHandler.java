@@ -89,7 +89,7 @@ public class UpdateUserCommandHandler implements CommandHandler<UpdateUserComman
         userModel.setUserId(command.getUserId());
         Boolean handle = userModel.handle(eventQueue, command);
         if (handle) {
-            return userRepository.save(userModel);
+            return userRepository.save(userModel)>0;
         }
         return false;
 

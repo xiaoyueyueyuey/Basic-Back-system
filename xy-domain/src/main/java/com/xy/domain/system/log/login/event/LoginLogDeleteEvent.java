@@ -8,4 +8,6 @@ import java.util.List;
 @Data
 public class LoginLogDeleteEvent implements DomainEvent {
         private List<Long> infoIds;
+
+
 }

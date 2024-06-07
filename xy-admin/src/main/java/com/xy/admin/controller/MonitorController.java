@@ -5,6 +5,7 @@ import com.xy.admin.common.cache.CacheCenter;
 import com.xy.admin.customize.aop.accessLog.AccessLog;
 import com.xy.admin.dto.monitor.OnlineUserDTO;
 import com.xy.admin.dto.monitor.RedisCacheInfoDTO;
+import com.xy.admin.dto.monitor.SearchDTO;
 import com.xy.admin.dto.monitor.ServerInfo;
 import com.xy.admin.query.service.impl.MonitorServiceImpl;
 import com.xy.common.base.BaseResponseData;
@@ -55,8 +56,12 @@ public class MonitorController extends BaseController {
     @Operation(summary = "在线用户列表")
     @PreAuthorize("@permission.has('monitor:online:list')")
     @GetMapping("/onlineUsers")
-    public BaseResponseData<PageDTO<OnlineUserDTO>> onlineUsers(String ipAddress, String username) {
-        List<OnlineUserDTO> onlineUserList = monitorServiceImpl.getOnlineUserList(username, ipAddress);
+    public BaseResponseData<PageDTO<OnlineUserDTO>> onlineUsers(@RequestBody(required = false) SearchDTO searchDTO) {
+        if(searchDTO == null) {
+            searchDTO = new SearchDTO();
+
+        }
+        List<OnlineUserDTO> onlineUserList = monitorServiceImpl.getOnlineUserList(searchDTO.getUsername(), searchDTO.getIpAddress());
         return BaseResponseData.ok(new PageDTO<>(onlineUserList));
     }
     /**

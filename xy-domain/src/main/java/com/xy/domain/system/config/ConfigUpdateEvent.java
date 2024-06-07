@@ -7,4 +7,5 @@ import lombok.Data;
 public class ConfigUpdateEvent implements DomainEvent {
     private Integer configId;
     private String configValue;
+
 }

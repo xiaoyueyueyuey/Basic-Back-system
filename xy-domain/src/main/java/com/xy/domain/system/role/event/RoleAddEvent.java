@@ -7,6 +7,7 @@ import java.util.List;
 
 @Data
 public class RoleAddEvent implements DomainEvent {
+    private Long roleId;
     private String roleName;
     private String roleKey;
     private Integer roleSort;
@@ -14,4 +15,9 @@ public class RoleAddEvent implements DomainEvent {
     private String dataScope;
     private String status;
     private List<Long> menuIds;
+    public void setAggregateId(Long aggregateId){
+        this.roleId = aggregateId;
+    };
+
+
 }

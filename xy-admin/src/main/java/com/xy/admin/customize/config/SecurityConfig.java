@@ -35,8 +35,6 @@ import org.springframework.security.web.authentication.logout.LogoutFilter;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
 import org.springframework.web.filter.CorsFilter;
 
-import javax.servlet.http.HttpServletRequest;
-
 /**
  * 主要配置登录流程逻辑涉及以下几个类
  *
@@ -89,7 +87,7 @@ public class SecurityConfig {
     @Bean
     public LogoutSuccessHandler logOutSuccessHandler() {
         return (request, response, authentication) -> {
-            SystemLoginUser loginUser = tokenService.getLoginUser((HttpServletRequest) request);// 获取用户
+            SystemLoginUser loginUser = tokenService.getLoginUser(request);// 获取用户
             if (loginUser != null) {
                 String userName = loginUser.getUsername();
                 // 删除用户缓存记录
@@ -125,7 +123,7 @@ public class SecurityConfig {
         ));
         http.sessionManagement((sessionManagement) -> sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
         http.authorizeHttpRequests((authorize) -> authorize
-                .requestMatchers("/login", "/register", "/getConfig", "/captchaImage", "/api/**")
+                .requestMatchers("/login", "/register", "/getConfig", "/captchaImage", "/api/**","/getConfig")
                 .anonymous()
                 .requestMatchers(HttpMethod.GET, "/", "/*.html", "/**/*.html", "/**/*.css", "/**/*.js", "/profile/**").permitAll()
                 .requestMatchers("/swagger-ui.html").anonymous()

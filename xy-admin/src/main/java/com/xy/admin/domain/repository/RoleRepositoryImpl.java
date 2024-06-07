@@ -3,6 +3,8 @@ package com.xy.admin.domain.repository;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.xy.admin.entity.agg.SysRoleAggEntity;
 import com.xy.admin.mapper.agg.SysRoleAggMapper;
+import com.xy.common.exception.ApiException;
+import com.xy.common.exception.error.ErrorCode;
 import com.xy.domain.system.role.RoleModel;
 import com.xy.domain.system.role.RoleRepository;
 import lombok.RequiredArgsConstructor;
@@ -28,13 +30,18 @@ public class RoleRepositoryImpl implements RoleRepository {
     }
 
     @Override
-    public Boolean save(RoleModel model) {
+    public Long save(RoleModel model) {
         SysRoleAggEntity sysRoleAggEntity = new SysRoleAggEntity();
         if (model.getRoleId() != null) {
-            return sysRoleAggMapper.updateById(sysRoleAggEntity) > 0;
+            int i = sysRoleAggMapper.updateById(sysRoleAggEntity);
+            return (long) i;
         } else {
-            return sysRoleAggMapper.insert(sysRoleAggEntity) > 0;
+            int insert = sysRoleAggMapper.insert(sysRoleAggEntity);
+            if(insert>0){
+                return sysRoleAggEntity.getRoleId();
+            }
         }
+        throw new ApiException(ErrorCode.Internal.INTERNAL_ERROR);
     }
 
     @Override

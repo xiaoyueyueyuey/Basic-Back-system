@@ -13,6 +13,7 @@ public class AddRoleCommandHandler implements CommandHandler<AddRoleCommand> {
 
     @Resource
     private RoleRepository roleRepository;
+
     @Override
     public Boolean handle(EventQueue eventQueue, AddRoleCommand command) {
         Boolean roleKeyIsUnique = roleRepository.checkRoleKeyIsUnique(command.getRoleKey());
@@ -25,8 +26,10 @@ public class AddRoleCommandHandler implements CommandHandler<AddRoleCommand> {
         roleModel.setRoleName(command.getRoleName());
         roleModel.setStatus(command.getStatus());
         Boolean handle = roleModel.handle(eventQueue, command);
-        if(handle){
-           return roleRepository.save(roleModel);
+        if (handle) {
+            Long roleId = roleRepository.save(roleModel);
+            eventQueue.queue().forEach(domainEvent -> domainEvent.setAggregateId(roleId));
+            return roleId>0;
         }
         return false;
     }

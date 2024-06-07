@@ -2,9 +2,9 @@ package com.xy.infrastructure.annotations.unrepeatable;
 
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.crypto.digest.DigestUtil;
-import cn.hutool.extra.servlet.ServletUtil;
 import com.xy.infrastructure.cache.RedisUtil;
 import com.xy.infrastructure.utils.ServletHolderUtil;
+import com.xy.infrastructure.utils.ip.IpUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -49,7 +49,7 @@ public class UnrepeatableAspect {
             //方式一，参数形式防重提交
             //通过 redissonClient 获取分布式锁，基于IP地址、类名、方法名和服务ID生成唯一key
             long lockTime = unrepeatable.lockTime();
-            String ipAddr = ServletUtil.getClientIP(ServletHolderUtil.getRequest());//获取IP地址
+            String ipAddr = IpUtil.getClientIP(ServletHolderUtil.getRequest());//获取IP地址 hutool包冲突，就用原始的了
             MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
             Method method = methodSignature.getMethod();//获取方法
             String className = method.getDeclaringClass().getName();//获取类名
@@ -62,7 +62,7 @@ public class UnrepeatableAspect {
         } else {
             //方式二，令牌形式防重提交，这里写简单了，没有区分服务，IP啥的，就只有服务器生成随机token，返回给客户端，客户端提交时带上token，服务器验证token是否存在，存在则删除token
             //从请求头中获取 request-token，如果不存在，则抛出异常
-            String requestToken = request.getHeader("request-token");
+            String requestToken = request.getHeader("REQUEST-TOKEN");
             if (StrUtil.isBlank(requestToken)) {
                 throw new RuntimeException("请求未包含令牌");
             }

@@ -16,4 +16,5 @@ public class LoginLogAddEvent implements DomainEvent {
     private String msg;
     private Date loginTime;
 
+
 }

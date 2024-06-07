@@ -45,9 +45,12 @@ public class UpdateRoleCommandHandler implements CommandHandler<UpdateRoleComman
         }
         model.setStatus(command.getStatus());
         Boolean handle = model.handle(eventQueue, command);
+
         if(handle){
-            return roleRepository.save(model);
+            Long save = roleRepository.save(model);
+            return save > 0;
         }
+
         return false;
     }
 }

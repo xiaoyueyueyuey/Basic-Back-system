@@ -24,4 +24,6 @@ public class OperationLogAddEvent implements DomainEvent {
     private Integer status;
     private String errorStack;
     private Date operationTime;
+
+
 }

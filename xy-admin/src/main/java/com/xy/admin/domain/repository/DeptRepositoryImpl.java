@@ -4,6 +4,8 @@ package com.xy.admin.domain.repository;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.xy.admin.entity.agg.SysDeptAggEntity;
 import com.xy.admin.mapper.agg.SysDeptAggMapper;
+import com.xy.common.exception.ApiException;
+import com.xy.common.exception.error.ErrorCode;
 import com.xy.domain.system.dept.DeptModel;
 import com.xy.domain.system.dept.DeptRepository;
 import lombok.RequiredArgsConstructor;
@@ -28,14 +30,21 @@ public class DeptRepositoryImpl implements DeptRepository {
     }
 
     @Override
-    public Boolean save(DeptModel model) {
+    public Long save(DeptModel model) {
         SysDeptAggEntity sysDeptAggEntity = new SysDeptAggEntity();
         if(model.getDeptId() == null){
-            return mapper.insert(sysDeptAggEntity) > 0;
+            int insert = mapper.insert(sysDeptAggEntity);
+            if(insert>0){
+                //返回新增的主键
+                return sysDeptAggEntity.getDeptId();
+            }
         }
         else {
-            return mapper.updateById(sysDeptAggEntity) > 0;
+           return (long) mapper.updateById(sysDeptAggEntity);
         }
+        throw new ApiException(ErrorCode.Internal.INTERNAL_ERROR);
+
+
     }
 
     @Override

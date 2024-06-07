@@ -15,7 +15,7 @@ public class OperationLogRepositoryImpl implements OperationLogRepository {
     }
 
     @Override
-    public Boolean save(OperationLogModel model) {
+    public Long save(OperationLogModel model) {
         return null;
     }
 

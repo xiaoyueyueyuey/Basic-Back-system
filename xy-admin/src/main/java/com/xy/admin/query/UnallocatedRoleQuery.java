@@ -25,7 +25,6 @@ public class UnallocatedRoleQuery extends AbstractPageQuery<SysUserEntity> {
             .and(o-> o.ne("r.role_id", roleId)
                 .or().isNull("u.role_id")
                 .or().eq("u.role_id", 0));
-
         return queryWrapper;
     }
     

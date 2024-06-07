@@ -24,8 +24,8 @@ public class ServletHolderUtil {
     /**
      * 获取request
      */
-    public static javax.servlet.http.HttpServletRequest getRequest() {
-        return (javax.servlet.http.HttpServletRequest) getRequestAttributes().getRequest();
+    public static HttpServletRequest getRequest() {
+        return getRequestAttributes().getRequest();
     }
 
     /**

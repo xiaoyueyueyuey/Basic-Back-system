@@ -13,9 +13,6 @@ import org.springframework.beans.BeanUtils;
 
 import java.util.Objects;
 
-/**
- * @author valarchie
- */
 @Data
 public class MenuModel {
     private Long menuId;//菜单id
@@ -28,7 +25,6 @@ public class MenuModel {
     private Long parentId;//父菜单id
     private Integer parentMenuType;//父菜单类型
     //    private String path;//菜单路径
-
     /**
      * 处理新增菜单命令
      *

@@ -19,7 +19,7 @@ public class ConfigRepositoryImpl implements ConfigRepository {
     }
 
     @Override
-    public Boolean save(ConfigModel model) {
+    public Long save(ConfigModel model) {
         return null;
     }
 

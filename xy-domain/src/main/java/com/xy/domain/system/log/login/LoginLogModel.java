@@ -8,7 +8,6 @@ import com.xy.domain.system.log.login.event.LoginLogDeleteEvent;
 import org.springframework.beans.BeanUtils;
 
 public class LoginLogModel {
-
     /**
      * 删除登录日志
      *

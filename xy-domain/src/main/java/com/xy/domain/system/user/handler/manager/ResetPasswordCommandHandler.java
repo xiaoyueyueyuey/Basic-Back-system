@@ -17,7 +17,7 @@ public class ResetPasswordCommandHandler implements CommandHandler<ResetPassword
         UserModel userModel = userRepository.findByIdOrError(command.getUserId());
         Boolean handle = userModel.handle(eventQueue, command);
         if (handle) {
-            return userRepository.save(userModel);
+            return userRepository.save(userModel)>0;
         }
         return false;
     }

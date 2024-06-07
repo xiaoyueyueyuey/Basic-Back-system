@@ -25,7 +25,6 @@ public class SysMenuMaterialize implements DomainEventListener {
 
     }
     private void addSysMenu(MenuAddEvent event) {
-        //TODO 同步menuId
         SysMenuEntity sysMenuEntity = new SysMenuEntity();
         BeanUtils.copyProperties(event ,sysMenuEntity);
         String metaInfo= JacksonUtil.to(event.getMeta());

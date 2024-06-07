@@ -9,6 +9,8 @@ import com.xy.admin.mapper.SysRoleMapper;
 import com.xy.admin.mapper.agg.SysDeptAggMapper;
 import com.xy.admin.mapper.agg.SysPostAggMapper;
 import com.xy.admin.mapper.agg.SysUserAggMapper;
+import com.xy.common.exception.ApiException;
+import com.xy.common.exception.error.ErrorCode;
 import com.xy.domain.system.user.UserModel;
 import com.xy.domain.system.user.UserProfileModel;
 import com.xy.domain.system.user.UserRepository;
@@ -37,15 +39,19 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public Boolean save(UserModel model) {
+    public Long save(UserModel model) {
         SysUserAggEntity sysUserAggEntity = new SysUserAggEntity();
         BeanUtils.copyProperties(model, sysUserAggEntity);
         if(model.getUserId() == null){
-            return sysUserAggMapper.insert(sysUserAggEntity) > 0;
+            int insert = sysUserAggMapper.insert(sysUserAggEntity);
+            if(insert > 0){
+                return sysUserAggEntity.getUserId();
+            }
         }
         else {
-            return sysUserAggMapper.updateById(sysUserAggEntity) > 0;
+            return (long) sysUserAggMapper.updateById(sysUserAggEntity);
         }
+        throw new ApiException(ErrorCode.Internal.INTERNAL_ERROR);
     }
 
     @Override

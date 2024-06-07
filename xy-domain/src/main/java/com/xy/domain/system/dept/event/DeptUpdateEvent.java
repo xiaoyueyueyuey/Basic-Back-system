@@ -13,4 +13,6 @@ public class DeptUpdateEvent implements DomainEvent {
     private String phone;
     private String email;
     private Integer status;
+
+
 }

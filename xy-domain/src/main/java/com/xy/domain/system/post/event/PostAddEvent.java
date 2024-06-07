@@ -5,6 +5,7 @@ import lombok.Data;
 
 @Data
 public class PostAddEvent implements DomainEvent {
+    private Long postId;
     private String postCode;
     private String postName;
     private Integer postSort;

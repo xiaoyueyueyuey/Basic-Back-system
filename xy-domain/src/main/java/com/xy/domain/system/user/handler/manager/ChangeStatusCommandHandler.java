@@ -19,7 +19,7 @@ public class ChangeStatusCommandHandler implements CommandHandler<ChangeStatusCo
         UserModel byIdOrError = userRepository.findByIdOrError(command.getUserId());
         Boolean handle = byIdOrError.handle(eventQueue, command);
         if (handle) {
-            return userRepository.save(byIdOrError);
+            return userRepository.save(byIdOrError)>0;
         }
         return false;
 

@@ -34,16 +34,18 @@ public class LoginServiceImpl implements LoginService {
     private AuthenticationManager authenticationManager;
 
 
-
     @Override
     public void userAuthenticate(String username, String password) {
         // 用户验证
+        log.info("加密前密码:{}", password);
         Authentication authentication;
         String decryptPassword = decryptPassword(password);
+        log.info("解密后密码:{}", decryptPassword);
         try {
             // 该方法会去调用UserDetailsServiceImpl#loadUserByUsername  校验用户名和密码  认证鉴权
             authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
                     username, decryptPassword));
+
         } catch (BadCredentialsException e) {
             ThreadPoolManager.execute(AsyncTaskFactory.loginInfoTask(username, LoginStatusEnum.LOGIN_FAIL,
 //                MessageUtils.message("Business.LOGIN_WRONG_USER_PASSWORD")

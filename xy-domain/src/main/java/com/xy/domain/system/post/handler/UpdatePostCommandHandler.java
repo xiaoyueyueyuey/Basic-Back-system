@@ -34,7 +34,7 @@ public class UpdatePostCommandHandler implements CommandHandler<UpdatePostComman
         }
         Boolean handle = postModel.handle(eventQueue, command);
         if (handle) {
-            return postRepository.save(postModel);
+            return postRepository.save(postModel)>0;
         }
         return false;
     }

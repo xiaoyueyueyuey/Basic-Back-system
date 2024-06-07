@@ -1,12 +1,15 @@
 package com.xy.domain.system.dept.handler;
 
 import com.xy.domain.CommandHandler;
+import com.xy.domain.DomainEvent;
 import com.xy.domain.EventQueue;
 import com.xy.domain.system.dept.DeptModel;
 import com.xy.domain.system.dept.DeptRepository;
 import com.xy.domain.system.dept.command.AddDeptCommand;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 /**
  * 添加部门命令处理器，处理器统一只给聚合赋聚合里面赋不到的值，不做业务逻辑处理
@@ -32,7 +35,13 @@ public class AddDeptCommandHandler implements CommandHandler<AddDeptCommand> {
         // 处理命令
         Boolean handle = deptModel.handle(eventQueue, command);
         if (handle) {
-            return deptRepository.save(deptModel);
+            Long deptId = deptRepository.save(deptModel);
+            //给队列的命令赋值
+            List<DomainEvent> queue = eventQueue.queue();
+            queue.forEach(domainEvent -> {
+                domainEvent.setAggregateId(deptId);//设置聚合id
+            });
+            return deptId > 0;
         }
         return false;
     }

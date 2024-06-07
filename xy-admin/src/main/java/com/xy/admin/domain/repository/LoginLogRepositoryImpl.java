@@ -13,7 +13,7 @@ public class LoginLogRepositoryImpl implements LoginLogRepository {
     }
 
     @Override
-    public Boolean save(LoginLogModel model) {
+    public Long save(LoginLogModel model) {
         return null;
     }
 

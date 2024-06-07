@@ -1,10 +1,10 @@
 package com.xy.infrastructure.user.base;
 
 
-import cn.hutool.extra.servlet.ServletUtil;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.xy.infrastructure.utils.ServletHolderUtil;
 import com.xy.infrastructure.utils.ip.IpRegionUtil;
+import com.xy.infrastructure.utils.ip.IpUtil;
 import eu.bitwalker.useragentutils.UserAgent;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -56,7 +56,7 @@ public class BaseLoginUser implements UserDetails {
      */
     public void fillLoginInfo() {
         UserAgent userAgent = UserAgent.parseUserAgentString(ServletHolderUtil.getRequest().getHeader("User-Agent"));
-        String ip = ServletUtil.getClientIP(ServletHolderUtil.getRequest());
+        String ip = IpUtil.getClientIP(ServletHolderUtil.getRequest());
 
         this.getLoginInfo().setIpAddress(ip);
         this.getLoginInfo().setLocation(IpRegionUtil.getBriefLocationByIp(ip));

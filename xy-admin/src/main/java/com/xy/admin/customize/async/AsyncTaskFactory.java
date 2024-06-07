@@ -1,7 +1,6 @@
 package com.xy.admin.customize.async;
 
 import cn.hutool.core.date.DateUtil;
-import cn.hutool.extra.servlet.ServletUtil;
 import cn.hutool.extra.spring.SpringUtil;
 import com.xy.admin.domain.common.CommandInvoker;
 import com.xy.admin.entity.SysOperationLogEntity;
@@ -12,6 +11,7 @@ import com.xy.domain.system.log.operation.command.AddOperationLogCommand;
 import com.xy.domain.system.log.operation.handler.AddOperationLogCommandHandler;
 import com.xy.infrastructure.utils.ServletHolderUtil;
 import com.xy.infrastructure.utils.ip.IpRegionUtil;
+import com.xy.infrastructure.utils.ip.IpUtil;
 import eu.bitwalker.useragentutils.UserAgent;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -42,7 +42,7 @@ public class AsyncTaskFactory {
                 ServletHolderUtil.getRequest().getHeader("User-Agent"));
         // 获取客户端浏览器
         final String browser = userAgent.getBrowser() != null ? userAgent.getBrowser().getName() : "";
-        final String ip = ServletUtil.getClientIP(ServletHolderUtil.getRequest());
+        final String ip = IpUtil.getClientIP(ServletHolderUtil.getRequest());//hutool工具包的javax和jakarta的包冲突 不支持
         final String address = IpRegionUtil.getBriefLocationByIp(ip);
         // 获取客户端操作系统
         final String os = userAgent.getOperatingSystem() != null ? userAgent.getOperatingSystem().getName() : "";

@@ -21,6 +21,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -36,6 +37,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/system")
 @Validated
+@Slf4j
 @RequiredArgsConstructor
 @Tag(name = "部门API", description = "部门相关的增删查改")
 public class SysDeptController extends BaseController {
@@ -106,7 +108,7 @@ public class SysDeptController extends BaseController {
      * 修改部门
      */
     @Operation(summary = "修改部门")
-    @PreAuthorize("@permission.has('system:dept:edit') AND @dataScope.checkDeptId(#updateCommand.deptId)")
+    @PreAuthorize("@permission.has('system:dept:edit') AND @dataScope.checkDeptId(#deptId)")
     @AccessLog(title = "部门管理", businessType = BusinessTypeEnum.MODIFY)
     @PutMapping("/dept/{deptId}")
     public BaseResponseData<Void> edit(@PathVariable("deptId")Long deptId, @RequestBody UpdateDeptCommand updateCommand) {

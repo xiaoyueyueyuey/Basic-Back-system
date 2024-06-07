@@ -15,8 +15,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class SysUserMaterialize implements DomainEventListener {
     private final SysUserMapper mapper;
-
-
     @Override
     public void onEvent(DomainEvent event) {
         if (event instanceof UserAddEvent) {
@@ -34,17 +32,18 @@ public class SysUserMaterialize implements DomainEventListener {
 
         }
     }
-
     private void updateUserLoginIpAndTime(UserLoginIpAndTimeUpdateEvent event) {
         SysUserEntity sysUserEntity = new SysUserEntity();
         BeanUtils.copyProperties(event, sysUserEntity);
         mapper.updateById(sysUserEntity);
     }
-
     public void addSysUser(UserAddEvent event) {
         SysUserEntity sysUserEntity = new SysUserEntity();
         BeanUtils.copyProperties(event, sysUserEntity);
-        mapper.insert(sysUserEntity);
+        int insert = mapper.insert(sysUserEntity);
+        if(insert >0){
+            //TODO 新增成功，如果有部门，需要维护部门聚合，如果有角色，需要维护角色聚合，如果有岗位，需要维护岗位聚合
+        }
     }
 
     public void updateSysUser(UserUpdateEvent event) {
@@ -52,7 +51,6 @@ public class SysUserMaterialize implements DomainEventListener {
         BeanUtils.copyProperties(event, sysUserEntity);
         mapper.updateById(sysUserEntity);
     }
-
     public void deleteSysUser(UserDeleteEvent event) {
         mapper.deleteById(event.getUserId());
     }

@@ -5,6 +5,7 @@ import lombok.Data;
 
 @Data
 public class DeptAddEvent implements DomainEvent {
+    private Long deptId;
     private Long parentId;
     private String deptName;
     private Integer orderNum;
@@ -12,4 +13,9 @@ public class DeptAddEvent implements DomainEvent {
     private String phone;
     private String email;
     private Integer status;
+
+    @Override
+    public void setAggregateId(Long aggregateId) {
+        this.deptId = aggregateId;
+    }
 }

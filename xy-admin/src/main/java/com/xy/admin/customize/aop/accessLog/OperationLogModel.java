@@ -3,7 +3,6 @@ package com.xy.admin.customize.aop.accessLog;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.EnumUtil;
 import cn.hutool.core.util.StrUtil;
-import cn.hutool.extra.servlet.ServletUtil;
 import cn.hutool.json.JSONUtil;
 import com.xy.admin.entity.SysOperationLogEntity;
 import com.xy.common.enums.BasicEnumUtil;
@@ -12,14 +11,15 @@ import com.xy.common.enums.common.RequestMethodEnum;
 import com.xy.infrastructure.user.AuthenticationUtils;
 import com.xy.infrastructure.user.web.SystemLoginUser;
 import com.xy.infrastructure.utils.ServletHolderUtil;
+import com.xy.infrastructure.utils.ip.IpUtil;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.HandlerMapping;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.Serial;
 import java.util.Collection;
 import java.util.Map;
@@ -36,7 +36,8 @@ public class OperationLogModel extends SysOperationLogEntity {
     HttpServletRequest request = ServletHolderUtil.getRequest();//获取请求
     public void fillOperatorInfo() {
         // 获取当前的用户
-        String ip = ServletUtil.getClientIP(request);
+//        String ip = ServletUtil.getClientIP(request);
+        String ip = IpUtil.getClientIP(request);
         setOperatorIp(ip);
         SystemLoginUser loginUser = AuthenticationUtils.getSystemLoginUser();
         if (loginUser != null) {

@@ -1,7 +1,6 @@
 package com.xy.admin.query;
 
 import cn.hutool.core.date.DateUtil;
-import cn.hutool.extra.servlet.ServletUtil;
 import cn.hutool.extra.spring.SpringUtil;
 import com.xy.admin.customize.async.AsyncTaskFactory;
 import com.xy.admin.domain.common.CommandInvoker;
@@ -15,6 +14,7 @@ import com.xy.infrastructure.thread.ThreadPoolManager;
 import com.xy.infrastructure.user.AuthenticationUtils;
 import com.xy.infrastructure.user.web.SystemLoginUser;
 import com.xy.infrastructure.utils.ServletHolderUtil;
+import com.xy.infrastructure.utils.ip.IpUtil;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -43,7 +43,7 @@ public class LoginMaterialize implements DomainEventListener {
 //        SysUserEntity entity = redisCache.userCache.getObjectById(loginUser.getUserId());// 从缓存中获取用户信息
         UpdateUserLoginIpAndTimeCommand command = new UpdateUserLoginIpAndTimeCommand();
         command.setUserId(loginUser.getUserId());
-        command.setLoginIp(ServletUtil.getClientIP(ServletHolderUtil.getRequest()));// 设置登录ip
+        command.setLoginIp(IpUtil.getClientIP(ServletHolderUtil.getRequest()));// 设置登录ip
         command.setLoginDate(DateUtil.date());// 设置登录时间
         UpdateUserLoginIpAndTimeCommandHandler handler = SpringUtil.getBean(UpdateUserLoginIpAndTimeCommandHandler.class);
         CommandInvoker invoker = SpringUtil.getBean(CommandInvoker.class);

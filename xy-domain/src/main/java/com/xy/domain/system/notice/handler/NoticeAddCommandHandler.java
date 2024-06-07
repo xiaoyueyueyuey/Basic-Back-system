@@ -8,8 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class NoticeAddCommandHandler implements CommandHandler<AddNoticeCommand> {
-//    @Resource
-//    private NoticeRepository noticeRepository;
+
     @Override
     public Boolean handle(EventQueue eventQueue, AddNoticeCommand command) {
        //新增就不需要找聚合了，直接new

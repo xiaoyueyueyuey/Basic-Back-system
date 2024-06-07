@@ -11,13 +11,13 @@ import com.xy.common.exception.error.ErrorCode;
 import com.xy.infrastructure.cache.redis.CacheKeyEnum;
 import com.xy.infrastructure.user.web.SystemLoginUser;
 import io.jsonwebtoken.*;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 /**
@@ -31,10 +31,17 @@ import java.util.concurrent.TimeUnit;
 @RequiredArgsConstructor
 public class TokenService {
     /**
-     * 自定义令牌标识
+     * 用户信息token
      */
-    @Value("${token.header}")
-    private String header;
+    @Value("${token.auth}")
+    private String auth;
+
+    /**
+     * 防重令牌
+     */
+    @Value("${token.unrepeate}")
+    private String unrepeate;
+
     /**
      * 令牌秘钥
      */
@@ -139,10 +146,11 @@ public class TokenService {
      * @return token
      */
     private String getTokenFromRequest(HttpServletRequest request) {
-        String token = request.getHeader(header);
+        String token = request.getHeader(auth);
         if (StrUtil.isNotEmpty(token) && token.startsWith(Constants.Token.PREFIX)) {
             token = StrUtil.stripIgnoreCase(token, Constants.Token.PREFIX, null);//去掉前缀Bearer
         }
+
         return token;
     }
 

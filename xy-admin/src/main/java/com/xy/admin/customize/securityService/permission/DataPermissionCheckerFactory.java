@@ -26,7 +26,6 @@ public class DataPermissionCheckerFactory {
     @PostConstruct
     public void initAllChecker() {
         SysDeptService deptService = SpringUtil.getBean(SysDeptService.class);
-
         allChecker = new AllDataPermissionChecker();
         customChecker = new CustomDataPermissionChecker(deptService);
         singleDeptChecker = new SingleDeptDataPermissionChecker(deptService);

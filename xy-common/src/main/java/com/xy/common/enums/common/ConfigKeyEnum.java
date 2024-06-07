@@ -9,7 +9,6 @@ import com.xy.common.enums.BasicEnum;
  * 对应 sys_config表的config_key字段
  */
 public enum ConfigKeyEnum implements BasicEnum<String> {
-
     /**
      * 菜单类型
      */

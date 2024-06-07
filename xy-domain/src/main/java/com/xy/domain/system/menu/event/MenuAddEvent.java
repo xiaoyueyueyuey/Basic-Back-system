@@ -6,6 +6,7 @@ import lombok.Data;
 
 @Data
 public class MenuAddEvent implements DomainEvent {
+    private Long menuId;//菜单id
     private Long parentId;
     private String menuName;
     private String routerName;
@@ -16,4 +17,9 @@ public class MenuAddEvent implements DomainEvent {
     private String permission;
     private MetaDTO meta;
     private String remark;
+
+    @Override
+    public void setAggregateId(Long aggregateId){
+        this.menuId = aggregateId;
+    }
 }

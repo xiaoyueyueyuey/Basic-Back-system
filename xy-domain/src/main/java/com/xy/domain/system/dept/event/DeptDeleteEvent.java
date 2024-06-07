@@ -6,4 +6,6 @@ import lombok.Data;
 @Data
 public class DeptDeleteEvent implements DomainEvent {
     private Long deptId;
+
+
 }

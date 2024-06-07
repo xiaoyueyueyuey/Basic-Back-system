@@ -3,6 +3,8 @@ package com.xy.admin.domain.repository;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.xy.admin.entity.agg.SysMenuAggEntity;
 import com.xy.admin.mapper.agg.SysMenuAggMapper;
+import com.xy.common.exception.ApiException;
+import com.xy.common.exception.error.ErrorCode;
 import com.xy.domain.system.menu.MenuModel;
 import com.xy.domain.system.menu.MenuRepository;
 import lombok.RequiredArgsConstructor;
@@ -52,15 +54,19 @@ public class MenuRepositoryImpl implements MenuRepository {
     }
 
     @Override
-    public Boolean save(MenuModel menu) {
+    public Long save(MenuModel menu) {
         SysMenuAggEntity sysMenuAggEntity = new SysMenuAggEntity();
         BeanUtils.copyProperties(menu, sysMenuAggEntity);
         if(menu.getMenuId() == null){
-            return sysMenuAggMapper.insert(sysMenuAggEntity) > 0;
+            int insert = sysMenuAggMapper.insert(sysMenuAggEntity);
+            if(insert > 0){
+                return sysMenuAggEntity.getMenuId();
+            }
         }
         else {
-            return sysMenuAggMapper.updateById(sysMenuAggEntity) > 0;
+            return (long) sysMenuAggMapper.updateById(sysMenuAggEntity);
         }
+        throw new ApiException(ErrorCode.Internal.INTERNAL_ERROR);
     }
 
     @Override

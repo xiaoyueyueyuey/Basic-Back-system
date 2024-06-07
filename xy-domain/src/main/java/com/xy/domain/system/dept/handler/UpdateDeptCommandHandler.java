@@ -25,7 +25,7 @@ public class UpdateDeptCommandHandler implements CommandHandler<UpdateDeptComman
         deptModel.setStatus(command.getStatus());
         Boolean handle = deptModel.handle(eventQueue, command);
         if (handle) {
-            return deptRepository.save(deptModel);
+            return deptRepository.save(deptModel)>0;
         }
         return false;
     }

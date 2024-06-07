@@ -63,9 +63,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             log.info("登录用户：{} 已被停用.", username);
             throw new ApiException(ErrorCode.Business.USER_IS_DISABLE, username);
         }
-
         RoleInfo roleInfo = getRoleInfo(userEntity.getRoleId(), userEntity.getIsAdmin());
-
         SystemLoginUser loginUser = new SystemLoginUser(userEntity.getUserId(), userEntity.getIsAdmin(), userEntity.getUsername(),
                 userEntity.getPassword(), roleInfo, userEntity.getDeptId());
         loginUser.fillLoginInfo();
@@ -78,7 +76,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         if (roleId == null) {
             return RoleInfo.EMPTY_ROLE;
         }
-
         if (isAdmin) {
             LambdaQueryWrapper<SysMenuEntity> menuQuery = Wrappers.lambdaQuery();
             menuQuery.select(SysMenuEntity::getMenuId);
@@ -88,7 +85,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
             return new RoleInfo(RoleInfo.ADMIN_ROLE_ID, RoleInfo.ADMIN_ROLE_KEY, DataScopeEnum.ALL, SetUtils.emptySet(),
                     RoleInfo.ADMIN_PERMISSIONS, allMenuIds);
-
         }
 
         SysRoleEntity roleEntity = roleService.getById(roleId);

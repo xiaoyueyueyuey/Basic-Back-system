@@ -3,6 +3,8 @@ package com.xy.admin.domain.repository;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.xy.admin.entity.agg.SysPostAggEntity;
 import com.xy.admin.mapper.agg.SysPostAggMapper;
+import com.xy.common.exception.ApiException;
+import com.xy.common.exception.error.ErrorCode;
 import com.xy.domain.system.post.PostModel;
 import com.xy.domain.system.post.PostRepository;
 import lombok.RequiredArgsConstructor;
@@ -28,8 +30,18 @@ public class PostRepositoryImpl implements PostRepository {
     }
 
     @Override
-    public Boolean save(PostModel model) {
-        return null;
+    public Long save(PostModel model) {
+        SysPostAggEntity sysPostAggEntity = new SysPostAggEntity();
+        BeanUtils.copyProperties(model, sysPostAggEntity);
+        if (model.getPostId() == null) {
+            int insert = sysPostAggMapper.insert(sysPostAggEntity);
+            if (insert > 0) {
+                return (sysPostAggEntity.getPostId());
+            }
+        } else {
+            return (long) sysPostAggMapper.updateById(sysPostAggEntity);
+        }
+        throw new ApiException(ErrorCode.Internal.INTERNAL_ERROR);
     }
 
     @Override
