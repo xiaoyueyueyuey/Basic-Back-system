@@ -21,11 +21,11 @@ public class DeleteMenuCommandHandler implements CommandHandler<DeleteMenuComman
      * @param eventQueue
      * @param command
      */
-    public Boolean handle(EventQueue eventQueue, DeleteMenuCommand command){
+    public Boolean handle(EventQueue eventQueue, DeleteMenuCommand command) {
         MenuModel menuModel = menuRepository.findByIdOrError(command.getMenuId());
 
         Boolean handle = menuModel.handle(eventQueue, command);
-        if(handle){
+        if (handle) {
             menuRepository.deleteBatchByIds(Collections.singletonList(command.getMenuId()));
         }
         return handle;

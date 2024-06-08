@@ -12,21 +12,21 @@ import org.springframework.stereotype.Component;
 public class UpdateMenuCommandHandler implements CommandHandler<UpdateMenuCommand> {
     @Resource
     private MenuRepository menuRepository;
-    public Boolean handle(EventQueue eventQueue, UpdateMenuCommand command){
+    public Boolean handle(EventQueue eventQueue, UpdateMenuCommand command) {
         //加载菜单聚合
         MenuModel menuModel = menuRepository.findByIdOrError(command.getMenuId());
-        if(menuModel.getMenuId()==null){
+        if (menuModel.getMenuId() == null) {
             return menuModel.handle(eventQueue, command);
         }
         //判断名字是否修改了
-        if(!menuModel.getMenuName().equals(command.getMenuName())){
-            Boolean hasMenuName = menuRepository.findByMenuNameOrError(command.getMenuName(),command.getMenuId());
-            menuModel.setMenuNameIsUnique(hasMenuName);
+        if (!menuModel.getMenuName().equals(command.getMenuName())) {
+            Boolean hasMenuName = menuRepository.findByMenuNameOrError(command.getMenuName(), command.getMenuId());
+            menuModel.setMenuNameIsUnique(!hasMenuName);
         }
         //处理命令
         Boolean handle = menuModel.handle(eventQueue, command);
         //如果处理成功，保存
-        if(handle){
+        if (handle) {
             menuRepository.save(menuModel);
         }
         return handle;

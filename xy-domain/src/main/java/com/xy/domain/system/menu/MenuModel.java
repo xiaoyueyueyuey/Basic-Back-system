@@ -24,7 +24,6 @@ public class MenuModel {
     private Integer menuAssignToRoleCount;//菜单分配给角色的数量
     private Long parentId;//父菜单id
     private Integer parentMenuType;//父菜单类型
-    //    private String path;//菜单路径
     /**
      * 处理新增菜单命令
      *
@@ -47,7 +46,6 @@ public class MenuModel {
             // 目前前端不支持嵌套的外链跳转
             checkAddButtonInIframeOrOutLink();
             checkAddMenuNotInCatalog();
-            checkParentIdConflict();
         } catch (ApiException e) {
             eventQueue.enqueue(new MenuAddFailedEvent());
             return false;
@@ -94,10 +92,10 @@ public class MenuModel {
             //检查是否有菜单分配给角色
             checkMenuAlreadyAssignToRole();
         } catch (ApiException e) {
-            eventQueue.enqueue(new MenuDeleteEvent(command.getMenuId()));
+            eventQueue.enqueue(new MenuDeletedFailedEvent());
             return false;
         }
-        eventQueue.enqueue(new MenuDeletedFailedEvent());
+        eventQueue.enqueue(new MenuDeleteEvent(command.getMenuId()));
         return true;
     }
 
