@@ -27,7 +27,7 @@
         <bitwalker.version>1.21</bitwalker.version>
 
         <mybatis-plus.version>3.5.5</mybatis-plus.version>
-        <mybatis-plus-generator.version>3.5.2</mybatis-plus-generator.version>
+        <mybatis-plus-generator.version>3.5.6</mybatis-plus-generator.version>
         <oshi.version>6.4.0</oshi.version>
         <redis.version>3.1.5</redis.version>
         <redisson.version>3.25.0</redisson.version>

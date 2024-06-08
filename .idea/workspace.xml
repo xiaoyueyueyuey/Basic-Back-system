@@ -5,373 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89021847-c037-462c-9ef2-3af450f3d5e9" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/AdminApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/common/cache/CacheCenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/common/cache/GuavaCacheService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/common/cache/MapCache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/common/cache/RedisCacheService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/common/command/BulkOperationCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/common/dto/common/CurrentLoginUserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/common/dto/common/TokenDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/common/dto/common/TreeSelectedDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/common/dto/common/UploadDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/common/dto/common/UploadFileDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/controller/MonitorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/controller/SysConfigController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/controller/SysDeptController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/controller/SysLogsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/controller/SysMenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/controller/SysNoticeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/controller/SysPostController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/controller/SysRoleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/controller/SysUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/controller/SysUserProfileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/customize/aop/accessLog/AccessLog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/customize/aop/accessLog/AccessLogAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/customize/aop/accessLog/OperationLogModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/customize/async/AsyncTaskFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/customize/config/JwtAuthenticationTokenFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/customize/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/customize/service/LoginService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/customize/service/TokenService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/customize/service/UserDetailsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/customize/service/permission/DataPermissionCheckerFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/customize/service/permission/DataPermissionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/customize/service/permission/MenuPermissionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/customize/service/permission/model/AbstractDataPermissionChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/customize/service/permission/model/DataCondition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/customize/service/permission/model/checker/AllDataPermissionChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/customize/service/permission/model/checker/CustomDataPermissionChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/customize/service/permission/model/checker/DefaultDataPermissionChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/customize/service/permission/model/checker/DeptTreeDataPermissionChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/customize/service/permission/model/checker/OnlySelfDataPermissionChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/customize/service/permission/model/checker/SingleDeptDataPermissionChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/domain/common/CommandInvoker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/domain/common/DomainEventDispatcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/domain/common/OneTransactionCommandInvoker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/domain/common/SimpleEventQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/domain/common/SyncDomainEventDispatcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/domain/repository/ConfigRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/domain/repository/DeptRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/domain/repository/MenuRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/domain/repository/NoticeRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/domain/repository/PostRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/domain/repository/RoleRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/domain/repository/UserRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/domain/user/SysUserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/config/ConfigDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/dept/DeptDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/log/LoginLogDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/log/OperationLogDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/login/CaptchaDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/login/ConfigDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/menu/ExtraIconDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/menu/MenuDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/menu/MenuDetailDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/menu/MetaDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/menu/RouterDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/menu/TransitionDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/monitor/CpuInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/monitor/DiskInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/monitor/JvmInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/monitor/MemoryInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/monitor/OnlineUserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/monitor/RedisCacheInfoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/monitor/ServerInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/monitor/SystemInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/notice/NoticeDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/post/PostDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/role/RoleDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/user/SearchUserDO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/user/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/user/UserDetailDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/user/UserInfoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/dto/user/UserProfileDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/entity/SysConfigEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/entity/SysDeptEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/entity/SysLoginInfoEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/entity/SysMenuEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/entity/SysNoticeEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/entity/SysOperationLogEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/entity/SysPostEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/entity/SysRoleEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/entity/SysRoleMenuEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/entity/SysUserEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/entity/agg/SysDeptAggEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/entity/agg/SysMenuAggEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/entity/agg/SysPostAggEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/entity/agg/SysRoleAggEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/entity/agg/SysUserAggEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/mapper/SysConfigMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/mapper/SysDeptMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/mapper/SysLoginInfoMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/mapper/SysMenuMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/mapper/SysNoticeMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/mapper/SysOperationLogMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/mapper/SysPostMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/mapper/SysRoleMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/mapper/SysRoleMenuMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/mapper/SysUserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/mapper/agg/SysDeptAggMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/mapper/agg/SysMenuAggMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/mapper/agg/SysPostAggMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/mapper/agg/SysRoleAggMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/mapper/agg/SysUserAggMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/AllocatedRoleQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/ConfigQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/DeptQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/LoginLogQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/MenuQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/NoticeQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/OperationLogQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/PostQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/RoleQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/SearchUserQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/SysConfigMaterialize.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/SysDeptMaterialize.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/SysMenuMaterialize.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/SysNoticeMaterialize.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/SysPostMaterialize.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/SysRoleMaterialize.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/SysUserMaterialize.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/SysUserProfileMaterialize.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/UnallocatedRoleQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/service/SysConfigService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/service/SysDeptService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/service/SysLoginInfoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/service/SysMenuService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/service/SysNoticeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/service/SysOperationLogService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/service/SysPostService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/service/SysRoleMenuService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/service/SysRoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/service/SysUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/service/application/LogApplicationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/service/application/UserApplicationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/service/impl/MonitorServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/service/impl/SysConfigServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/service/impl/SysDeptServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/service/impl/SysLoginInfoServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/service/impl/SysMenuServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/service/impl/SysNoticeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/service/impl/SysOperationLogServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/service/impl/SysPostServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/service/impl/SysRoleMenuServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/service/impl/SysRoleServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/query/service/impl/SysUserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/resources/application-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/resources/application-test.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/resources/mapper/SysConfigMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/resources/mapper/SysPostAggMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-common/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-common/src/main/java/com/xy/common/annotation/excel/ExcelColumn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-common/src/main/java/com/xy/common/annotation/excel/ExcelSheet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-common/src/main/java/com/xy/common/utils/jackson/JacksonException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-common/src/main/java/com/xy/common/utils/jackson/JacksonUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/CommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/DomainEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/DomainEventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/EventQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/common/Repository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/config/ConfigModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/config/ConfigRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/config/ConfigUpdateEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/config/ConfigUpdateFailedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/config/UpdateConfigCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/config/UpdateConfigCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/dept/DeptModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/dept/DeptRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/dept/UserDeptModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/dept/command/AddDeptCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/dept/command/DeleteDeptCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/dept/command/UpdateDeptCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/dept/event/DeptAddEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/dept/event/DeptAddFailedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/dept/event/DeptDeleteEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/dept/event/DeptDeleteFailedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/dept/event/DeptUpdateEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/dept/event/DeptUpdateFailedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/dept/handler/AddDeptCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/dept/handler/DeleteDeptCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/dept/handler/UpdateDeptCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/login/LoginCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/menu/MenuModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/menu/MenuRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/menu/RouterModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/menu/command/AddMenuCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/menu/command/DeleteMenuCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/menu/command/UpdateMenuCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/menu/dto/ExtraIconDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/menu/dto/MetaDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/menu/dto/TransitionDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/menu/event/MenuAddEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/menu/event/MenuAddFailedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/menu/event/MenuDeleteEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/menu/event/MenuDeletedFailedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/menu/event/MenuUpdateEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/menu/event/MenuUpdateFailedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/menu/handler/AddMenuCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/menu/handler/DeleteMenuCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/menu/handler/UpdateMenuCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/notice/NoticeModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/notice/NoticeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/notice/command/AddNoticeCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/notice/command/DeleteNoticeCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/notice/command/UpdateNoticeCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/notice/event/NoticeAddEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/notice/event/NoticeAddFailedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/notice/event/NoticeDeleteEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/notice/event/NoticeDeleteFailedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/notice/event/NoticeUpdateEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/notice/event/NoticeUpdateFailedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/notice/handler/NoticeAddCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/notice/handler/NoticeDeleteCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/notice/handler/NoticeUpdateCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/post/PostModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/post/PostRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/post/UserPostModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/post/command/AddPostCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/post/command/DeletePostCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/post/command/UpdatePostCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/post/event/PostAddEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/post/event/PostAddFailedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/post/event/PostDeleteEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/post/event/PostDeleteFailedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/post/event/PostUpdateEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/post/event/PostUpdateFailedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/post/handler/AddPostCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/post/handler/DeletePostCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/post/handler/UpdatePostCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/role/RoleModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/role/RoleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/role/command/AddRoleCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/role/command/DeleteRoleCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/role/command/UpdateRoleCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/role/command/UpdateRoleDataScopeCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/role/command/UpdateRoleStatusCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/role/event/RoleAddEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/role/event/RoleAddFailedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/role/event/RoleDataScopeUpdateEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/role/event/RoleDataScopeUpdateFailedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/role/event/RoleDeleteEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/role/event/RoleDeleteFailedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/role/event/RoleStatusUpdateEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/role/event/RoleStatusUpdateFailedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/role/event/RoleUpdateEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/role/event/RoleUpdateFailedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/role/handler/AddRoleCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/role/handler/DeleteRoleCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/role/handler/UpdateRoleCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/role/handler/UpdateRoleDataScopeCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/role/handler/UpdateRoleStatusCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/SysUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/UserModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/UserProfileModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/command/manager/AddUserCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/command/manager/ChangeStatusCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/command/manager/DeleteUserCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/command/manager/ResetPasswordCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/command/manager/UpdateUserCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/command/user/UpdateUserAvatarCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/command/user/UpdateUserPasswordCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/command/user/UpdateUserProfileCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/event/manager/PasswordResetEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/event/manager/PasswordResetFailedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/event/manager/StatusChangeEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/event/manager/StatusChangeFailedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/event/manager/UserAddEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/event/manager/UserAddFailedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/event/manager/UserDeleteEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/event/manager/UserDeleteFailedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/event/manager/UserUpdateEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/event/manager/UserUpdateFailedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/event/user/UserAvatarUpdateEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/event/user/UserAvatarUpdateFailedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/event/user/UserPasswordUpdateEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/event/user/UserPasswordUpdateFailedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/event/user/UserProfileUpdateEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/event/user/UserProfileUpdateFailedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/handler/manager/AddUserCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/handler/manager/ChangeStatusCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/handler/manager/DeleteUserCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/handler/manager/ResetPasswordCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/handler/manager/UpdateUserCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/handler/user/UpdateProfileCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/handler/user/UpdateUserAvatarCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/user/handler/user/UpdateUserPasswordCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/annotations/ratelimit/RateLimit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/annotations/ratelimit/RateLimitKey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/annotations/ratelimit/RateLimiterAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/annotations/ratelimit/implementation/AbstractRateLimitChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/annotations/ratelimit/implementation/MapRateLimitChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/annotations/ratelimit/implementation/RedisRateLimitChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/annotations/unrepeatable/Unrepeatable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/annotations/unrepeatable/UnrepeatableInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/base/BaseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/base/BaseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/cache/RedisUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/cache/aop/CacheNameConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/cache/aop/GuavaCacheBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/cache/aop/RedisCacheBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/cache/aop/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/cache/guava/AbstractGuavaCacheTemplate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/cache/redis/CacheKeyEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/cache/redis/RedisCacheTemplate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/config/XYBootConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/config/captcha/CaptchaConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/config/captcha/CaptchaMathTextCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/config/filter/FilterConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/config/globaltransaction/GlobalTransactionConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/config/jackson/JacksonConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/config/mybatis/MyBatisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/config/mybatisplus/MyBatisPlusConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/config/mybatisplus/MyMetaObjectHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/config/redis/FastJson2JsonRedisSerializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/config/redis/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/config/springdoc/SpringDocConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/exception/DbExceptionAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/exception/GlobalExceptionFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/exception/GlobalExceptionInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/filter/TestFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/filter/TraceIdFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/log/MethodLogAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/page/AbstractPageQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/page/AbstractQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/page/PageDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/schedule/ScheduleJobManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/security/RsaKeyPairGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/security/xss/JsonHtmlXssTrimSerializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/thread/ShutdownHook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/thread/ThreadConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/thread/ThreadPoolManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/user/AuthenticationUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/user/app/AppLoginUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/user/base/BaseLoginUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/user/base/LoginInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/user/web/DataScopeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/user/web/RoleInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/user/web/SystemLoginUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/utils/ServletHolderUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/utils/file/FileUploadUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/utils/ip/IpRegion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/utils/ip/IpRegionUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/utils/ip/IpUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/utils/ip/OfflineIpRegionUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/utils/ip/OnlineIpRegionUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/utils/poi/CustomExcelUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/utils/poi/TrimXssEditor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/utils/time/DatePickUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/resources/application-basic.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/resources/ip2region.xdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xy-admin/src/main/java/com/xy/CodeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xy-admin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xy-admin/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xy-admin/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/xy-admin/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/cache/aop/RedisCacheBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/cache/aop/RedisCacheBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xy-infrastructure/src/main/java/com/xy/infrastructure/cache/aop/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xy-infrastructure/src/main/resources/application-basic.yml" beforeDir="false" afterPath="$PROJECT_DIR$/xy-infrastructure/src/main/resources/application-basic.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -387,6 +26,7 @@
         <option value="module-info" />
         <option value="Interface" />
         <option value="MybatisXML文件" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -404,6 +44,9 @@
         <option name="userSettingsFile" value="C:\javaSoftWare\apache-maven-3.9.6\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -424,9 +67,11 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Xyue/Desktop/XYBoot-Basic/xy-infrastructure/src/main/java/com/xy/infrastructure/utils&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Xyue/Desktop/XYBoot-Basic/xy-infrastructure/src/main/java/com/xy/infrastructure&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -435,23 +80,34 @@
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Xyue\\AppData\\Local\\Programs\\IntelliJ IDEA Ultimate 3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Xyue\Desktop\XYBoot-Basic\xy-infrastructure\src\main\java\com\xy\infrastructure" />
       <recent name="C:\Users\Xyue\Desktop\XYBoot-Basic\xy-infrastructure\src\main\java\com\xy\infrastructure\utils" />
       <recent name="C:\Users\Xyue\Desktop\XYBoot-Basic\xy-domain\src\main\java\com\xy\domain\system\menu\dto" />
       <recent name="C:\Users\Xyue\Desktop\XYBoot-Basic\xy-domain\src\main\java\com\xy\domain\system\user" />
       <recent name="C:\Users\Xyue\Desktop\XYBoot-Basic\xy-domain\src\main\java\com\xy\domain\system\role" />
-      <recent name="C:\Users\Xyue\Desktop\XYBoot-Basic\xy-domain\src\main\java\com\xy\domain\system\post" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.xy.admin.common" />
+      <recent name="com.xy.admin.query.service.impl" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.xy.domain.system.log.operation.handler" />
+      <recent name="com.xy.domain.system.log.operation.event" />
+      <recent name="com.xy.domain.system.log.operation" />
+      <recent name="com.xy.domain.system.log.operation.command" />
       <recent name="com.xy.domain.system.menu.dto" />
-      <recent name="com.xy.domain.system.user" />
-      <recent name="com.xy.domain.system.role" />
-      <recent name="com.xy.domain.system.post" />
-      <recent name="com.xy.domain.system.notice" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -461,7 +117,38 @@
       </set>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.AdminApplication">
+    <configuration name="TestTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="xy-admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xy.admin.common.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xy.admin.common" />
+      <option name="MAIN_CLASS_NAME" value="com.xy.admin.common.TestTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="xy-admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xy.admin.common.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xy.admin.common" />
+      <option name="MAIN_CLASS_NAME" value="com.xy.admin.common.TestTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AdminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="xy-admin" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.xy.AdminApplication" />
@@ -478,6 +165,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.AdminApplication" />
+        <item itemvalue="JUnit.TestTest.test1" />
+        <item itemvalue="JUnit.TestTest" />
       </list>
     </recent_temporary>
   </component>
@@ -499,11 +188,55 @@
       <workItem from="1717397085828" duration="4542000" />
       <workItem from="1717404271138" duration="15660000" />
       <workItem from="1717466663684" duration="10000" />
+      <workItem from="1717486131997" duration="11331000" />
+      <workItem from="1717501558586" duration="9642000" />
+      <workItem from="1717550409617" duration="12450000" />
+      <workItem from="1717575255912" duration="16508000" />
+      <workItem from="1717639843655" duration="1058000" />
+      <workItem from="1717670009569" duration="11742000" />
+      <workItem from="1717726795288" duration="899000" />
+      <workItem from="1717744899390" duration="13059000" />
+      <workItem from="1717761816384" duration="4931000" />
+      <workItem from="1717815330192" duration="1375000" />
+      <workItem from="1717825531680" duration="1174000" />
     </task>
+    <task id="LOCAL-00001" summary="refactor: 重构完毕，待优化">
+      <option name="closed" value="true" />
+      <created>1717594173910</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717594173910</updated>
+    </task>
+    <task id="LOCAL-00002" summary="refactor: 调整了一下">
+      <option name="closed" value="true" />
+      <created>1717760758225</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1717760758225</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="refactor: 重构完毕，待优化" />
+    <MESSAGE value="refactor: 调整了一下" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: 调整了一下" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -526,10 +259,45 @@
           </properties>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/xy-admin/src/test/java/com/xy/admin/common/TestTest.java</url>
+          <line>18</line>
+          <properties class="com.xy.admin.common.TestTest" method="test1">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/xy-domain/src/main/java/com/xy/domain/system/role/handler/UpdateRoleCommandHandler.java</url>
           <line>17</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/controller/SysRoleController.java</url>
+          <line>180</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/controller/SysRoleController.java</url>
+          <line>192</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/xy-admin/src/test/java/com/xy/admin/common/TestTest.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/xy-admin/src/main/java/com/xy/AdminApplication.java</url>
+          <line>6</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/xy-admin/src/main/java/com/xy/admin/entity/SysUserEntity.java</url>
+          <line>60</line>
+          <properties field="sex" class="com.xy.admin.entity.SysUserEntity" />
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

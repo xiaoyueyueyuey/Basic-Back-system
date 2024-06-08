@@ -104,6 +104,9 @@ mybatis-plus:
       defaultExecutorType: SIMPLE
       logImpl: org.apache.ibatis.logging.slf4j.Slf4jImpl
     global-config:
+      db-config:
+#        主键自增
+        id-type: auto
       refresh: true
 
 

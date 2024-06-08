@@ -14,7 +14,6 @@ import java.util.concurrent.Callable;
 //@Component
 @RequiredArgsConstructor
 public class RedisCacheBean implements Cache {
-
     /**
      * 缓存仓库
      */

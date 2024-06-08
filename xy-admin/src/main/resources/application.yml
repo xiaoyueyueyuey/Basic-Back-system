@@ -37,8 +37,8 @@ springdoc:
       enabled: true
   group-configs:
     - group: '公共API'
-      packages-to-scan: com.agileboot.admin.controller.common
+      packages-to-scan: com.xyboot.admin.controller.common
     - group: '内置系统API'
-      packages-to-scan: com.agileboot.admin.controller.system
+      packages-to-scan: com.xyboot.admin.controller.system
 
 
